@@ -14,9 +14,10 @@ const useStyles = makeStyles(theme => createStyles({
     },
     item: {
         padding: "0 30px",
-        margin: "0 5px",
+        margin: "0 3px",
         cursor: "pointer",
         lineHeight: "53px",
+        textTransform: "uppercase",
 
         "&:hover": {
             backgroundColor: "#6baed6",
@@ -24,29 +25,41 @@ const useStyles = makeStyles(theme => createStyles({
     },
     itemSelected: {
         padding: "0 30px",
-        margin: "0 5px",
+        margin: "0 3px",
         cursor: "pointer",
         backgroundColor: "#6baed6",
-        lineHeight: "53px"
+        lineHeight: "53px",
+        textTransform: "uppercase",
     },
     blogItem: {
         marginLeft: "auto",
-        marginRight: 20,
-        cursor: "pointer"
+        marginRight: 25,
+        cursor: "pointer",
+
+        "&:hover": {
+            transition: "1s",
+            scale: 1.5
+        }
     }
 }));
 
-const Navigation = () => {
+interface NavigationProps {
+    onItemClick: (anchorname: string) => void
+}
+
+const Navigation: React.FC<NavigationProps> = ({onItemClick}) => {
     const classes = useStyles();
     const [selectedIndex, setSelectedIndex] = useState(0);
     const navigations = ["Basic", "Education", "Publication", "Award", "Life", "Contact"]
     const onClick = (i: number) => {
         setSelectedIndex(i);
+        onItemClick(navigations[i]);
     }
 
     return <div className={classes.Navigation}>
         {navigations.map((item, i) => {
             return <div className={i === selectedIndex ? classes.itemSelected : classes.item}
+                        key={item}
                         onClick={() => onClick(i)}>
                 {item}
             </div>
