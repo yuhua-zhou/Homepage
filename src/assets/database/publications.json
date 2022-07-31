@@ -1,0 +1,26 @@
+[
+  {
+    "teaser": "visualInsight",
+    "title": "An Intelligent Approach to Automatically Discovering Visual Insight",
+    "award": "Honorable Mention",
+    "author": "Yuhua Zhou, Xiyu Meng, Yanhong Wu, Tan Tang, Yingcai Wu",
+    "me": 0,
+    "journal": "ChinaVis2022"
+  },
+  {
+    "teaser": "warehouse",
+    "title": "A Visualization Approach for Monitoring Order Processing in E-Commerce Warehouse",
+    "award": "",
+    "author": "Junxiu Tang, Yuhua Zhou, Tan Tang, Di Weng, Boyang Xie, Lingyun Yu, Huaqiang Zhang, and Yingcai Wu",
+    "me": 1,
+    "journal": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2021)"
+  },
+  {
+    "teaser": "transVideo",
+    "title": "Narrative Transitions in Data Videos",
+    "award": "",
+    "author": "Junxiu Tang, Lingyun Yu, Tan Tang, Xinhuan Shu, Lu Ying, Yuhua Zhou, Peiran Ren, and Yingcai Wu",
+    "me": 5,
+    "journal": "IEEE VIS 2020 Short Papers"
+  }
+]

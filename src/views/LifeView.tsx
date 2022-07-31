@@ -1,5 +1,6 @@
 import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
+import Title from "../components/Title";
 
 const useStyles = makeStyles(theme => createStyles({
     LifeView: {
@@ -10,7 +11,8 @@ const useStyles = makeStyles(theme => createStyles({
 const LifeView = () => {
     const classes = useStyles();
     return <div id={"Life"} className={classes.LifeView}>
-        LifeView
+        <Title title={"Life"} subTitle={"what my spare time"}/>
+
     </div>
 }
 

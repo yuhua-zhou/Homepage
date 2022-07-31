@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Navigation from "./components/Navigation";
 import {createStyles, makeStyles} from "@material-ui/core";
@@ -8,20 +8,49 @@ import PublicationView from "./views/PublicationView";
 import AwardView from "./views/AwardView";
 import LifeView from "./views/LifeView";
 import ContactView from "./views/ContactView";
+import {Divider} from "antd";
 
 const useStyles = makeStyles(theme => createStyles({
     App: {
         width: '100vw',
         height: '100vh',
-        overflowX: "hidden"
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+    },
+    body: {
+        width: "100%",
+        padding: "30px",
+        flex: 1,
+        overflowY: "scroll",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
     },
     content: {
-        padding: "20px"
+        width: 1190,
+
     }
 }));
 
+
 const App = () => {
     const classes = useStyles();
+    const navigations = ["Basic", "Education", "Publications", "Awards", "Life", "Contact"];
+    const [navigationAnchorTop, setNavigationAnchorTop] = useState<number[]>([]);
+
+    useEffect(() => {
+        window.addEventListener("scroll", onScrollChange, true);
+        const offsets: number[] = navigations.map((name) => {
+            const element = document.getElementById(name);
+            if (element) {
+                return element.offsetTop;
+            }
+            return 0;
+        })
+        setNavigationAnchorTop(offsets)
+    }, [])
 
     const scrollToAnchor = (anchorname: string) => {
         if (anchorname) {
@@ -32,15 +61,28 @@ const App = () => {
         }
     }
 
+    const onScrollChange = (event: any) => {
+        console.log(navigationAnchorTop);
+        // console.log(event.target.scrollTop);
+    }
+
     return <div className={classes.App}>
-        <Navigation onItemClick={scrollToAnchor}/>
-        <div className={classes.content}>
-            <BasicView/>
-            <EducationView/>
-            <PublicationView/>
-            <AwardView/>
-            <LifeView/>
-            <ContactView/>
+        <Navigation onItemClick={scrollToAnchor} navigations={navigations}/>
+
+        <div className={classes.body}>
+            <div className={classes.content}>
+                <BasicView/>
+                <Divider/>
+                <EducationView/>
+                <Divider/>
+                <PublicationView/>
+                <Divider/>
+                <AwardView/>
+                <Divider/>
+                <LifeView/>
+                <Divider/>
+                <ContactView/>
+            </div>
         </div>
     </div>
 }

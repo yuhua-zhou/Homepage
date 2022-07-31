@@ -1,5 +1,6 @@
 import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
+import Title from "../components/Title";
 
 const useStyles = makeStyles(theme => createStyles({
     AwardView: {
@@ -9,8 +10,8 @@ const useStyles = makeStyles(theme => createStyles({
 
 const AwardView = () => {
     const classes = useStyles();
-    return <div id={"Award"} className={classes.AwardView}>
-        AwardView
+    return <div id={"Awards"} className={classes.AwardView}>
+        <Title title={"Award"} subTitle={"what i gained from competition"}/>
     </div>
 }
 
