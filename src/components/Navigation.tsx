@@ -65,7 +65,7 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
     }
 
     const goToBlog = () => {
-        window.open("https://www.baidu.com")
+        window.open("https://zyh533.github.io/SizerBlog/#/index/home")
     }
 
     return <div className={classes.Navigation}>

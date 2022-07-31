@@ -16,17 +16,29 @@ const useStyles = makeStyles(theme => createStyles({
         display: "flex"
     },
     content: {
-        marginLeft: 30
+        marginLeft: 50,
+        marginTop: 20
+    },
+    name: {
+        fontSize: 25,
+        fontFamily: "微软雅黑",
+        fontWeight: 700,
+        color: "#7daed3",
+        letterSpacing: 3
+    },
+    tags: {
+        marginBottom: 15
     },
     paragraph: {
         fontFamily: "Montserrat",
         fontSize: 15,
         marginBottom: 20,
-        lineHeight: "25px"
+        lineHeight: "25px",
     },
     link: {
         color: "#7daed3",
-        textDecoration: "underline"
+        textDecoration: "underline",
+        margin: "0 5px"
     }
 }));
 
@@ -37,11 +49,13 @@ const BasicView = () => {
         <div className={classes.body}>
             <img className={classes.picture} src={myPicture}/>
             <div className={classes.content}>
-                <div>Yuhua Zhou</div>
+                <div className={classes.name}>Yuhua Zhou (周煜华)</div>
+                <div className={classes.tags}>tags</div>
+
                 <div className={classes.paragraph}>
                     Welcome and thank you for visiting my site! I'm a Ph.D candidate at
-                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"}> Interactive Data Group
-                        (IDG) </a> of State key Lab of Cad & CG,
+                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"}>Interactive Data Group
+                        (IDG)</a> of State key Lab of Cad & CG,
                     College of Computer Technology, Zhejiang University, supervised by Prof.
                     Yingcai Wu. I received my Bachelor’s degree of Computer Science and Technology from Zhejiang
                     Sci-tech University.

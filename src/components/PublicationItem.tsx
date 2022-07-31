@@ -1,5 +1,12 @@
 import React, {useMemo} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
+import {
+    PaperClipOutlined,
+    CodeSandboxOutlined,
+    VideoCameraOutlined,
+    GlobalOutlined,
+    FundProjectionScreenOutlined
+} from "@ant-design/icons";
 
 const useStyles = makeStyles(theme => createStyles({
     PublicationItem: {
@@ -9,13 +16,16 @@ const useStyles = makeStyles(theme => createStyles({
         padding: 10,
         borderRadius: 5,
         display: "flex",
-        fontFamily: "Montserrat"
+        fontFamily: "Montserrat",
     },
     teaser: {
         width: 250
     },
     content: {
-        marginLeft: 10
+        marginLeft: 10,
+        flex: 1,
+        display: "flex",
+        flexDirection: "column"
     },
     title: {
         fontSize: 17,
@@ -36,7 +46,21 @@ const useStyles = makeStyles(theme => createStyles({
         color: "#474747",
         fontSize: 15
     },
-    journal: {}
+    journal: {
+        marginTop: 10,
+        color: "#767676"
+    },
+    detail: {
+        marginTop: "auto",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "right"
+    },
+    link: {
+        margin: "0 5px",
+        color: "#86bdec",
+
+    }
 }));
 
 interface PublicationItemProps {
@@ -71,8 +95,32 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                     return <div>{item}, </div>
                 })}
             </div>
-            <div className={classes.journal}>
-                {journal}
+
+            <div className={classes.journal}>{journal}</div>
+
+            <div className={classes.detail}>
+                <div>
+                    Paper:
+                    <a className={classes.link}
+                       href={"https://www.baidu.com"}
+                       target={"_blank"}><PaperClipOutlined/>PDF</a>
+                </div>
+                <div style={{margin: "0 5px"}}>|</div>
+                <div>
+                    Material:
+                    <a className={classes.link}
+                       href={"https://www.baidu.com"}
+                       target={"_blank"}><VideoCameraOutlined/>Video</a>,
+                    <a className={classes.link}
+                       href={"https://www.baidu.com"}
+                       target={"_blank"}><CodeSandboxOutlined/>Code</a>,
+                    <a className={classes.link}
+                       href={"https://www.baidu.com"}
+                       target={"_blank"}><GlobalOutlined/>Website</a>,
+                    <a className={classes.link}
+                       href={"https://www.baidu.com"}
+                       target={"_blank"}><FundProjectionScreenOutlined/>Presentation</a>
+                </div>
             </div>
         </div>
     </div>
