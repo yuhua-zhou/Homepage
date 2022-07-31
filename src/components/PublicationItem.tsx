@@ -17,6 +17,11 @@ const useStyles = makeStyles(theme => createStyles({
         borderRadius: 5,
         display: "flex",
         fontFamily: "Montserrat",
+        position: "relative",
+
+        "&:hover > $year": {
+            backgroundColor: "red"
+        }
     },
     teaser: {
         width: 250
@@ -48,18 +53,27 @@ const useStyles = makeStyles(theme => createStyles({
     },
     journal: {
         marginTop: 10,
-        color: "#767676"
+        color: "#767676",
+        fontStyle: "italic"
     },
     detail: {
         marginTop: "auto",
         display: "flex",
         alignItems: "center",
-        justifyContent: "right"
     },
     link: {
         margin: "0 5px",
         color: "#86bdec",
 
+    },
+    year: {
+        marginLeft: "auto",
+        backgroundColor: "#000",
+        color: "white",
+        padding: "5px 15px",
+        position: "absolute",
+        right: 0,
+        bottom: 0
     }
 }));
 
@@ -123,6 +137,7 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                 </div>
             </div>
         </div>
+        <div className={classes.year}>2022</div>
     </div>
 }
 

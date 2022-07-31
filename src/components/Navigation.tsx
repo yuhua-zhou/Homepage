@@ -26,9 +26,11 @@ const useStyles = makeStyles(theme => createStyles({
         cursor: "pointer",
         lineHeight: "53px",
         textTransform: "uppercase",
+        transition: "0.5s",
 
         "&:hover": {
             backgroundColor: "#6baed6",
+            transition: "1s",
         }
     },
     itemSelected: {
@@ -39,15 +41,27 @@ const useStyles = makeStyles(theme => createStyles({
         lineHeight: "53px",
         textTransform: "uppercase",
     },
-    blogItem: {
+    blogBtn: {
+        height: '53px',
         marginLeft: "auto",
         marginRight: 25,
         cursor: "pointer",
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
 
-        "&:hover": {
-            transition: "0.5s",
-            transform: "scale(1.1)"
+        "&:hover > $blogText": {
+            transition: "0.8s",
+            right: 15
         }
+    },
+    blogText: {
+        width: 60,
+        background: "#bdd7e7",
+        position: "absolute",
+        lineHeight: "53px",
+        right: 0,
+        transition: "0.8s",
     }
 }));
 
@@ -78,8 +92,8 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
                 {item}
             </div>
         })}
-        <div className={classes.blogItem} onClick={goToBlog}>
-            My Blog
+        <div className={classes.blogBtn} onClick={goToBlog}>
+            <div className={classes.blogText}>My Blog</div>
             <RightOutlined/>
         </div>
     </div>
