@@ -26,6 +26,7 @@
     "js-beautify": "^1.14.0",
     "loadsh": "^0.0.4",
     "npm": "^7.21.1",
+    "paper": "^0.12.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-error-overlay": "^6.0.9",

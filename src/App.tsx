@@ -30,7 +30,6 @@ const useStyles = makeStyles(theme => createStyles({
     },
     content: {
         width: 1190,
-
     }
 }));
 
@@ -38,18 +37,9 @@ const useStyles = makeStyles(theme => createStyles({
 const App = () => {
     const classes = useStyles();
     const navigations = ["Basic", "Education", "Publications", "Awards", "Life", "Contact"];
-    const [navigationAnchorTop, setNavigationAnchorTop] = useState<number[]>([]);
 
     useEffect(() => {
         window.addEventListener("scroll", onScrollChange, true);
-        const offsets: number[] = navigations.map((name) => {
-            const element = document.getElementById(name);
-            if (element) {
-                return element.offsetTop;
-            }
-            return 0;
-        })
-        setNavigationAnchorTop(offsets)
     }, [])
 
     const scrollToAnchor = (anchorname: string) => {
@@ -62,8 +52,16 @@ const App = () => {
     }
 
     const onScrollChange = (event: any) => {
-        console.log(navigationAnchorTop);
-        // console.log(event.target.scrollTop);
+        const {scrollTop} = event.target;
+        const offsets: number[] = navigations.map((name) => {
+            const element = document.getElementById(name);
+            if (element) {
+                return element.offsetTop;
+            }
+            return 0;
+        })
+
+        // const index = offsets.findIndex((o) => o === 1);
     }
 
     return <div className={classes.App}>

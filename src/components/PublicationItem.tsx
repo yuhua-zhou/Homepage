@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => createStyles({
         position: "relative",
 
         "&:hover > $year": {
-            backgroundColor: "red"
+            backgroundColor: "red",
+            transition: "0.8s",
         }
     },
     teaser: {
@@ -73,7 +74,9 @@ const useStyles = makeStyles(theme => createStyles({
         padding: "5px 15px",
         position: "absolute",
         right: 0,
-        bottom: 0
+        bottom: 0,
+        transition: "0.5s",
+        borderRadius: "0 0 5px 0"
     }
 }));
 
@@ -83,10 +86,11 @@ interface PublicationItemProps {
     award: string,
     author: string,
     me: number,
-    journal: string
+    journal: string,
+    year: string
 }
 
-const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, author, me, journal}) => {
+const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, author, me, journal, year}) => {
     const classes = useStyles();
     const imgSrc = require("../assets/image/" + teaser + ".png").default;
     const authorList = useMemo(() => {
@@ -137,7 +141,7 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                 </div>
             </div>
         </div>
-        <div className={classes.year}>2022</div>
+        <div className={classes.year}>{year}</div>
     </div>
 }
 

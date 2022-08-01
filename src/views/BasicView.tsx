@@ -2,6 +2,14 @@ import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
 import myPicture from "../assets/image/myPicture.png"
+import MyPicture from "../components/MyPicture";
+import { Tag } from 'antd';
+import {
+    FacebookOutlined,
+    LinkedinOutlined,
+    TwitterOutlined,
+    YoutubeOutlined,
+} from '@ant-design/icons';
 
 const useStyles = makeStyles(theme => createStyles({
     BasicView: {},
@@ -47,17 +55,26 @@ const BasicView = () => {
     return <div id={"Basic"} className={classes.BasicView}>
         <Title title={"Basic Info"} subTitle={"about me"}/>
         <div className={classes.body}>
-            <img className={classes.picture} src={myPicture}/>
+
+            <MyPicture/>
+
             <div className={classes.content}>
                 <div className={classes.name}>Yuhua Zhou (周煜华)</div>
-                <div className={classes.tags}>tags</div>
+                <div className={classes.tags}>
+                    <div>Sing, Dance, Rap, and Basketball</div>
+                    <Tag icon={<TwitterOutlined />} color="#55acee">Twitter</Tag>
+                    <Tag icon={<YoutubeOutlined />} color="#cd201f">Youtube</Tag>
+                    <Tag icon={<FacebookOutlined />} color="#3b5999">Facebook</Tag>
+                    <Tag icon={<LinkedinOutlined />} color="#55acee">LinkedIn</Tag>
+                </div>
 
                 <div className={classes.paragraph}>
                     Welcome and thank you for visiting my site! I'm a Ph.D candidate at
-                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"}>Interactive Data Group
-                        (IDG)</a> of State key Lab of Cad & CG,
-                    College of Computer Technology, Zhejiang University, supervised by Prof.
-                    Yingcai Wu. I received my Bachelor’s degree of Computer Science and Technology from Zhejiang
+                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"}>
+                        Interactive Data Group (IDG)
+                    </a>
+                    of State key Lab of Cad & CG, College of Computer Technology, Zhejiang University, supervised by
+                    Prof. Yingcai Wu. I received my Bachelor’s degree of Computer Science and Technology from Zhejiang
                     Sci-tech University.
                 </div>
                 <div className={classes.paragraph}>

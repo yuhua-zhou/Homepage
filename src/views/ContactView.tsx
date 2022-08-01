@@ -4,7 +4,7 @@ import Title from "../components/Title";
 
 const useStyles = makeStyles(theme => createStyles({
     ContactView: {
-        height: 600
+        height: 300
     },
 }));
 

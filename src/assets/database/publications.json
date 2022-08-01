@@ -5,7 +5,8 @@
     "award": "Honorable Mention",
     "author": "Yuhua Zhou, Xiyu Meng, Yanhong Wu, Tan Tang, Yingcai Wu",
     "me": 0,
-    "journal": "ChinaVis2022"
+    "journal": "ChinaVis2022",
+    "year": "2022"
   },
   {
     "teaser": "warehouse",
@@ -13,7 +14,8 @@
     "award": "",
     "author": "Junxiu Tang, Yuhua Zhou, Tan Tang, Di Weng, Boyang Xie, Lingyun Yu, Huaqiang Zhang, and Yingcai Wu",
     "me": 1,
-    "journal": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2021)"
+    "journal": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2021)",
+    "year": "2021"
   },
   {
     "teaser": "transVideo",
@@ -21,6 +23,7 @@
     "award": "",
     "author": "Junxiu Tang, Lingyun Yu, Tan Tang, Xinhuan Shu, Lu Ying, Yuhua Zhou, Peiran Ren, and Yingcai Wu",
     "me": 5,
-    "journal": "IEEE VIS 2020 Short Papers"
+    "journal": "IEEE VIS 2020 Short Papers",
+    "year": "2020"
   }
 ]
