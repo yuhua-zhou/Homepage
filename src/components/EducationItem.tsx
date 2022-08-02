@@ -10,12 +10,12 @@ const useStyles = makeStyles(theme => createStyles({
         flex: 1,
         margin: "20px 0",
 
+        "&:hover > $detailBox": {
+            border: "3px solid #7daed3",
+        },
         "&:hover > $diamond": {
             backgroundColor: "#bdd7e7"
         },
-        "&:hover > $detailBox":{
-            border: "3px solid #7daed3",
-        }
     },
     dateTime: {
         color: "white",

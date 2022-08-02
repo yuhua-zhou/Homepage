@@ -5,13 +5,17 @@ import Title from "../components/Title";
 import email from "../assets/image/email.png";
 import phone from "../assets/image/phone.png";
 import location from "../assets/image/location.png";
+import wechatQRcode from "../assets/image/wechat.png";
+import dingtalkQRcode from "../assets/image/dingtalk.png";
+import alipayQRcode from "../assets/image/alipay.png";
+import qqQRcode from "../assets/image/qq.png";
 
 const useStyles = makeStyles(theme => createStyles({
     ContactView: {
         fontFamily: "microsoft雅黑"
     },
     content: {
-        margin: "15px 0",
+        margin: 20,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between"
@@ -32,6 +36,11 @@ const useStyles = makeStyles(theme => createStyles({
         margin: "0 8px"
     },
     QRCode: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: 'center'
+    },
+    QRCodeImg: {
         width: 150,
         height: 150,
         margin: 5
@@ -69,11 +78,23 @@ const ContactView = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <img className={classes.QRCode}/>
-                <img className={classes.QRCode}/>
-                <img className={classes.QRCode}/>
-                <img className={classes.QRCode}/>
+            <div style={{display: "flex"}}>
+                <div className={classes.QRCode}>
+                    <img className={classes.QRCodeImg} src={wechatQRcode}/>
+                    <div>WeChat</div>
+                </div>
+                <div className={classes.QRCode}>
+                    <img className={classes.QRCodeImg} src={dingtalkQRcode}/>
+                    <div>DingTalk</div>
+                </div>
+                <div className={classes.QRCode}>
+                    <img className={classes.QRCodeImg} src={qqQRcode}/>
+                    <div>QQ</div>
+                </div>
+                <div className={classes.QRCode}>
+                    <img className={classes.QRCodeImg} src={alipayQRcode}/>
+                    <div>AliPay</div>
+                </div>
             </div>
         </div>
     </div>

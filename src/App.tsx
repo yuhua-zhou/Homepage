@@ -9,6 +9,7 @@ import AwardView from "./views/AwardView";
 import LifeView from "./views/LifeView";
 import ContactView from "./views/ContactView";
 import {Divider} from "antd";
+import MileStoneView from "./views/MileStoneView";
 
 const useStyles = makeStyles(theme => createStyles({
     App: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => createStyles({
 
 const App = () => {
     const classes = useStyles();
-    const navigations = ["Basic", "Education", "Publications", "Awards", "Life", "Contact"];
+    const navigations = ["Basic", "Education", "Publications", "Awards", "Life", "MileStones", "Contact"];
 
     useEffect(() => {
         window.addEventListener("scroll", onScrollChange, true);
@@ -78,6 +79,8 @@ const App = () => {
                 <AwardView/>
                 <Divider/>
                 <LifeView/>
+                <Divider/>
+                <MileStoneView/>
                 <Divider/>
                 <ContactView/>
             </div>
