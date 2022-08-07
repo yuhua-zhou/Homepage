@@ -10,6 +10,8 @@ import LifeView from "./views/LifeView";
 import ContactView from "./views/ContactView";
 import {Divider} from "antd";
 import MileStoneView from "./views/MileStoneView";
+import {findNearestInArray} from "./utils/utils";
+import {useDispatch} from "react-redux";
 
 const useStyles = makeStyles(theme => createStyles({
     App: {
@@ -34,9 +36,9 @@ const useStyles = makeStyles(theme => createStyles({
     }
 }));
 
-
 const App = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const navigations = ["Basic", "Education", "Publications", "Awards", "Life", "MileStones", "Contact"];
 
     useEffect(() => {
@@ -47,13 +49,22 @@ const App = () => {
         if (anchorname) {
             const anchorElement = document.getElementById(anchorname);
             if (anchorElement) {
-                anchorElement.scrollIntoView({behavior: "smooth", block: "start"})
+                // remove the listener
+                window.removeEventListener("scroll", onScrollChange, true);
+                // scroll to view
+                anchorElement.scrollIntoView({behavior: "smooth", block: "start"});
+
+                // after 1s, add listener
+                setTimeout(() => {
+                    window.addEventListener("scroll", onScrollChange, true);
+                }, 1000)
             }
         }
     }
 
     const onScrollChange = (event: any) => {
         const {scrollTop} = event.target;
+
         const offsets: number[] = navigations.map((name) => {
             const element = document.getElementById(name);
             if (element) {
@@ -62,11 +73,14 @@ const App = () => {
             return 0;
         })
 
-        // const index = offsets.findIndex((o) => o === 1);
+        const index = findNearestInArray(offsets, scrollTop);
+        dispatch({type: "SetNavigateSelectedIndex", payload: index});
     }
 
     return <div className={classes.App}>
-        <Navigation onItemClick={scrollToAnchor} navigations={navigations}/>
+        <Navigation
+            onItemClick={scrollToAnchor}
+            navigations={navigations}/>
 
         <div className={classes.body}>
             <div className={classes.content}>
