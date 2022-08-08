@@ -1,9 +1,6 @@
-export enum GlobalActions {
-
+export interface SetNavigateSelectedIndex {
+    type: "SetNavigateSelectedIndex",
+    payload: number
 }
 
-export interface GlobalAction {
-    type: GlobalActions
-}
-
-export type GlobalActionTypes = GlobalAction
+export type GlobalActionTypes = SetNavigateSelectedIndex

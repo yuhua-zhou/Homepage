@@ -3,7 +3,7 @@ import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
 import myPicture from "../assets/image/myPicture.png"
 import MyPicture from "../components/MyPicture";
-import { Tag } from 'antd';
+import {Tag} from 'antd';
 import {
     FacebookOutlined,
     LinkedinOutlined,
@@ -28,11 +28,12 @@ const useStyles = makeStyles(theme => createStyles({
         marginTop: 20
     },
     name: {
-        fontSize: 25,
+        fontSize: 27,
         fontFamily: "微软雅黑",
-        fontWeight: 700,
+        fontWeight: 600,
         color: "#7daed3",
-        letterSpacing: 3
+        letterSpacing: 3,
+        textShadow: "2px 2px 2px #ffbd29"
     },
     tags: {
         marginBottom: 15
@@ -47,6 +48,10 @@ const useStyles = makeStyles(theme => createStyles({
         color: "#7daed3",
         textDecoration: "underline",
         margin: "0 5px"
+    },
+    underline: {
+        textDecoration: "underline",
+        margin: "0 5px",
     }
 }));
 
@@ -61,11 +66,10 @@ const BasicView = () => {
             <div className={classes.content}>
                 <div className={classes.name}>Yuhua Zhou (周煜华)</div>
                 <div className={classes.tags}>
-                    <div>Sing, Dance, Rap, and Basketball</div>
-                    <Tag icon={<TwitterOutlined />} color="#55acee">Twitter</Tag>
-                    <Tag icon={<YoutubeOutlined />} color="#cd201f">Youtube</Tag>
-                    <Tag icon={<FacebookOutlined />} color="#3b5999">Facebook</Tag>
-                    <Tag icon={<LinkedinOutlined />} color="#55acee">LinkedIn</Tag>
+                    <Tag icon={<TwitterOutlined/>} color="#55acee">Sing</Tag>
+                    <Tag icon={<YoutubeOutlined/>} color="#cd201f">Dance</Tag>
+                    <Tag icon={<FacebookOutlined/>} color="#3b5999">Rap</Tag>
+                    <Tag icon={<LinkedinOutlined/>} color="#55acee">Basketball</Tag>
                 </div>
 
                 <div className={classes.paragraph}>
@@ -78,17 +82,29 @@ const BasicView = () => {
                     Sci-tech University.
                 </div>
                 <div className={classes.paragraph}>
-                    I used to be a data journalist and learned design and coding by myself. I am enthusiastic about
-                    telling story with data and communicating data insights to the masses. Currently, my research
-                    interest mainly lies in data-driven storytelling, data visualization design, human-computer
-                    interaction, and intelligent visualization.
+                    I am enthusiastic about mapping into the main learning tasks in Artificial Intelligence (AI) to
+                    bridge the needs in visualization with the capabilities of AI.
+                    Currently, my research interest mainly lies in AI4VIS, which aims to apply the Machine Learning
+                    technology to the visualization, whose sub-directions including
+                    <span className={classes.underline}>Visualization Generation</span>,
+                    <span className={classes.underline}>Visualization Recommendation</span>,
+                    <span className={classes.underline}>Visualization Assessment</span>,
+                    <span className={classes.underline}>Chart Mining</span>,
+                    <span className={classes.underline}>Chart Understand</span>, and so on.
+                    Specifically, many of them involve data storytelling, which tell story with data and communicating
+                    data insights to the masses. My another research interest lies in Explainable AI (XAI), which aims
+                    to open the black box of AI and make it interpretable with Visualization.
                 </div>
                 <div className={classes.paragraph}>
-                    I pay close attention to the application of data visualization in industries such as data
-                    journalism, digital humanism, and business intelligence. I believe that visual literacy and data
-                    related skills are vital in the big data era. I am also a part-time writer running a blog / writing
-                    books / organizing events in China to introduce the latest progression and application of data
-                    visualization as well as teaching visualization skills.
+                    I have practice in Zhejiang lab where the goal is to bridge the research with industry (2021/03
+                    - now). I contributed as frontend software developer to participate in developing the big data
+                    platform called
+                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"}>
+                        Nebula
+                    </a>, in which I improve my coding skills. In my spare time, II enjoy taking exercise to strengthen
+                    my body as well as to refresh my tied brain, especially playing basketball. Besides, watching
+                    movies, playing computer games, and enjoy tasted food are also fulfilling my life. I believe the
+                    attitude of work and life balance can be helpful for my research career.
                 </div>
             </div>
         </div>

@@ -3,18 +3,18 @@
     "dateTime": "2013/09 —— 2016/06",
     "schoolName": "The First High School of Shang Hang",
     "schoolLogo": "shyz",
-    "description": "I studied in science subject in my high school, I played the role of League branch secretary and my study performance ranked top ten in my class."
+    "description": "I majored in science subject in my high school, served as the League branch secretary, and received the top ten grades in my class for my academic achievements."
   },
   {
     "dateTime": "2016/09 —— 2020/06",
     "schoolName": "Zhejiang Sci-Tech University",
     "schoolLogo": "zstu",
-    "description": "My major is Computer Science and Technology. I was excellent in my university, I studied hard and got a high GPA. Due to my excellent comprehensive score, I was recommended to get higher education as a master at Zhejiang University without examing. Besides, I got outstanding graduates in Zhejiang province."
+    "description": "My major is computer science and technology. I excelled at my university, put in a lot of effort, and earned a good GPA. My exceptional comprehensive score earned me a recommendation to pursue master's-level studies at Zhejiang University without taking any exams."
   },
   {
-    "dateTime": "2020/09 —— now",
+    "dateTime": "2020/09 —— Now",
     "schoolName": "Zhejiang University",
     "schoolLogo": "zju",
-    "description": "I am Software Engineering student, I love researching in the visualization field, I am attempting to read and write sci-papers to improve my research ability."
+    "description": "I'm a student of software engineering, and I like researching in the topic of visualization. I'm aiming to read and publish scientific articles in order to strengthen my research skills."
   }
 ]

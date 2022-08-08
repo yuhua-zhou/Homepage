@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import {RightOutlined} from "@ant-design/icons";
+import logo from "../assets/image/logo.png";
+import {useGlobalState} from "../store/useData";
+import {useDispatch} from "react-redux";
 
 const useStyles = makeStyles(theme => createStyles({
     Navigation: {
@@ -14,11 +17,9 @@ const useStyles = makeStyles(theme => createStyles({
         fontFamily: "'Helvetica', sans-serif"
     },
     logo: {
-        backgroundColor: "#f5f5f5",
-        width: 150,
-        height: 40,
+        height: 35,
         marginLeft: 25,
-        marginRight: 10
+        marginRight: 30
     },
     item: {
         padding: "0 30px",
@@ -67,14 +68,16 @@ const useStyles = makeStyles(theme => createStyles({
 
 interface NavigationProps {
     navigations: string[],
-    onItemClick: (anchorname: string) => void
+    onItemClick: (anchorname: string) => void,
 }
 
 const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
     const classes = useStyles();
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    const dispatch = useDispatch();
+    const {navigateSelectedIndex} = useGlobalState();
+
     const onClick = (i: number) => {
-        setSelectedIndex(i);
+        dispatch({type:"SetNavigateSelectedIndex", payload:i});
         onItemClick(navigations[i]);
     }
 
@@ -83,10 +86,10 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
     }
 
     return <div className={classes.Navigation}>
-        <div className={classes.logo}/>
+        <img className={classes.logo} src={logo}/>
 
         {navigations.map((item, i) => {
-            return <div className={i === selectedIndex ? classes.itemSelected : classes.item}
+            return <div className={i === navigateSelectedIndex ? classes.itemSelected : classes.item}
                         key={item}
                         onClick={() => onClick(i)}>
                 {item}

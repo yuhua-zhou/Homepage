@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import {SwapOutlined} from "@ant-design/icons";
 import Paper from "paper";
+import "../animation.css";
 
 import myPicture from "../assets/image/myPicture.png";
 import myPicture2 from "../assets/image/myPicture2.jpg";
@@ -17,7 +18,8 @@ const useStyles = makeStyles(theme => createStyles({
         height: 300,
         borderRadius: "50%",
         marginTop: 70,
-        marginBottom: 15
+        marginBottom: 15,
+        animation: "swing 2s infinite"
     },
     switchBtn: {
         fontSize: 17,
