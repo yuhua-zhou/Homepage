@@ -58,7 +58,7 @@ const ContactView = () => {
                     <div className={classes.verticalLine}/>
                     <div>
                         <div style={{fontWeight: 500, fontSize: 16}}>Email Me</div>
-                        <div>zhouyuhua@zju.edu.cn / Sizer533@16.com</div>
+                        <div>zhouyuhua@zju.edu.cn / Sizer533@163.com</div>
                     </div>
                 </div>
                 <div className={classes.contactItem}>
