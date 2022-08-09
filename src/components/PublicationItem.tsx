@@ -45,12 +45,16 @@ const useStyles = makeStyles(theme => createStyles({
     author: {
         display: "flex",
         alignItems: "center",
-        color: "#767676"
+        color: "#767676",
+
+        "& > *": {
+            marginRight: 5
+        }
     },
     meAuthor: {
         fontWeight: 700,
         color: "#474747",
-        fontSize: 15
+        fontSize: 15,
     },
     journal: {
         marginTop: 10,
@@ -66,6 +70,9 @@ const useStyles = makeStyles(theme => createStyles({
         margin: "0 5px",
         color: "#86bdec",
 
+        "& > *": {
+            marginRight: 3
+        }
     },
     year: {
         marginLeft: "auto",
@@ -117,6 +124,7 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
             <div className={classes.journal}>{journal}</div>
 
             <div className={classes.detail}>
+                [
                 <div>
                     Paper:
                     <a className={classes.link}
@@ -139,6 +147,7 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                        href={"https://www.baidu.com"}
                        target={"_blank"}><FundProjectionScreenOutlined/>Presentation</a>
                 </div>
+                ]
             </div>
         </div>
         <div className={classes.year}>{year}</div>

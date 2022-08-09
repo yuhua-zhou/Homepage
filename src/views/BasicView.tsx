@@ -1,7 +1,6 @@
 import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
-import myPicture from "../assets/image/myPicture.png"
 import MyPicture from "../components/MyPicture";
 import {Tag} from 'antd';
 import {
@@ -41,8 +40,8 @@ const useStyles = makeStyles(theme => createStyles({
     paragraph: {
         fontFamily: "Montserrat",
         fontSize: 15,
-        marginBottom: 20,
-        lineHeight: "25px",
+        marginBottom: 15,
+        lineHeight: "27px",
     },
     link: {
         color: "#7daed3",
@@ -99,7 +98,7 @@ const BasicView = () => {
                     I have practice in Zhejiang lab where the goal is to bridge the research with industry (2021/03
                     - now). I contributed as frontend software developer to participate in developing the big data
                     platform called
-                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"}>
+                    <a className={classes.link} href={"https://nebula-dev.zjvis.net"} target={"_blank"}>
                         Nebula
                     </a>, in which I improve my coding skills. In my spare time, II enjoy taking exercise to strengthen
                     my body as well as to refresh my tied brain, especially playing basketball. Besides, watching

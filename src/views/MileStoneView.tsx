@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import Title from "../components/Title";
 import {createStyles, makeStyles} from "@material-ui/core";
 import mileStoneImg from "../assets/image/milestone.png";
@@ -23,13 +23,34 @@ const useStyles = makeStyles(theme => createStyles({
 const MileStoneView = () => {
     const classes = useStyles();
 
+    const {years, myMileStones} = useMemo(() => {
+        const years: string[] = [];
+        const myMileStones: any = {};
+
+        mileStoneList.forEach((item) => {
+            const {date} = item;
+            const [year,] = date.split("/");
+            if (!years.includes(year)) {
+                years.push(year);
+                myMileStones[year] = [];
+            }
+            myMileStones[year].push(item);
+        });
+
+        return {years, myMileStones};
+    }, [mileStoneList])
+
     return <div id={"MileStones"} className={classes.MileStoneView}>
         <Title title={"MileStones"} subTitle={"my latest news"}/>
         <div className={classes.content}>
             <div className={classes.mileStoneList}>
-                <MileStoneYearHeader year={"2022"}/>
-                {mileStoneList.map((item) => {
-                    return <MileStoneItem {...item}/>
+                {years.map((year) => {
+                    return <div>
+                        <MileStoneYearHeader year={year}/>
+                        {myMileStones[year].map((item: any) => {
+                            return <MileStoneItem {...item}/>
+                        })}
+                    </div>
                 })}
             </div>
             <div>

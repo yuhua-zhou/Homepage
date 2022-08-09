@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => createStyles({
         width: 300,
         height: 300,
         borderRadius: "50%",
-        marginTop: 70,
+        marginTop: 100,
         marginBottom: 15,
         animation: "swing 2s infinite"
     },

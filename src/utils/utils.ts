@@ -1,3 +1,4 @@
+// find the nearest value index in the given array
 export const findNearestInArray = (arr: number[], target: number) => {
     let distance = 1000000000;
     let index = 0;
