@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => createStyles({
         alignItems: "center",
 
         "&:hover > $blogText": {
-            transition: "0.8s",
+            transition: "0.4s",
             right: 15
         }
     },
@@ -62,7 +62,7 @@ const useStyles = makeStyles(theme => createStyles({
         position: "absolute",
         lineHeight: "53px",
         right: 0,
-        transition: "0.8s",
+        transition: "0.4s",
     }
 }));
 

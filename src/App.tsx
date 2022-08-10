@@ -33,13 +33,18 @@ const useStyles = makeStyles(theme => createStyles({
     },
     content: {
         width: 1190,
+    },
+    footer: {
+        width: "100%",
+        height: 15,
+        background: "#7daed3"
     }
 }));
 
 const App = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const navigations = ["Basic", "Education", "Publications", "Awards", "Life", "MileStones", "Contact"];
+    const navigations = ["Basic", "Education", "Publications", "Awards", "MileStones", "Life", "Contact"];
 
     useEffect(() => {
         window.addEventListener("scroll", onScrollChange, true);
@@ -92,12 +97,13 @@ const App = () => {
                 <Divider/>
                 <AwardView/>
                 <Divider/>
-                <LifeView/>
-                <Divider/>
                 <MileStoneView/>
+                <Divider/>
+                <LifeView/>
                 <Divider/>
                 <ContactView/>
             </div>
+            <div className={classes.footer}/>
         </div>
     </div>
 }

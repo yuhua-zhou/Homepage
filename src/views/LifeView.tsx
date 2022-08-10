@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
 import {Button} from "antd";
+import lifeList from "../assets/database/lifes.json";
 
 const useStyles = makeStyles(theme => createStyles({
     LifeView: {},
@@ -24,10 +25,13 @@ const useStyles = makeStyles(theme => createStyles({
     },
     lifeImg: {
         width: "100%",
-        height: 130
+        height: 150
     },
-    lifeDesc: {
+    lifeText: {
         marginTop: 5
+    },
+    lifeDate: {
+        textAlign: "right"
     },
     toggleBtn: {
         marginTop: 10,
@@ -39,7 +43,6 @@ const useStyles = makeStyles(theme => createStyles({
 const LifeView = () => {
     const classes = useStyles();
     const [expand, setExpand] = useState(false);
-    const lifeList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
     const contentHeight = Math.ceil((lifeList.length) / 4) * 250 + 20;
 
     const onExpandToggle = () => {
@@ -50,10 +53,11 @@ const LifeView = () => {
         <div className={classes.content}
              style={{height: expand ? contentHeight : 250 + 20}}
         >
-            {lifeList.map(() => {
+            {lifeList.map((item: any) => {
                 return <div className={classes.lifeItem}>
                     <img className={classes.lifeImg}/>
-                    <div className={classes.lifeDesc}>xxxxxxxxxxxxxxxxxxxxxxx</div>
+                    <div className={classes.lifeText}>{item.text}</div>
+                    <div className={classes.lifeDate}>{item.date}</div>
                 </div>
             })}
         </div>
