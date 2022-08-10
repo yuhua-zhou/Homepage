@@ -146,6 +146,9 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                     <a className={classes.link}
                        href={"https://www.baidu.com"}
                        target={"_blank"}><FundProjectionScreenOutlined/>Presentation</a>
+                    <a className={classes.link}
+                       href={"https://www.baidu.com"}
+                       target={"_blank"}><FundProjectionScreenOutlined/>Cite</a>
                 </div>
                 ]
             </div>

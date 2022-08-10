@@ -31,8 +31,12 @@ const useStyles = makeStyles(theme => createStyles({
         fontFamily: "微软雅黑",
         fontWeight: 600,
         color: "#7daed3",
-        letterSpacing: 3,
-        textShadow: "2px 2px 2px #ffbd29"
+        letterSpacing: 1,
+        marginBottom: 5
+    },
+    nameUnderline: {
+        display: "inline",
+        borderBottom: "3px solid red"
     },
     tags: {
         marginBottom: 15
@@ -63,7 +67,9 @@ const BasicView = () => {
             <MyPicture/>
 
             <div className={classes.content}>
-                <div className={classes.name}>Yuhua Zhou (周煜华)</div>
+                <div className={classes.name}>
+                    Hi, I am <div className={classes.nameUnderline}>Yuhua Zhou</div> (周煜华)
+                </div>
                 <div className={classes.tags}>
                     <Tag icon={<TwitterOutlined/>} color="#55acee">Sing</Tag>
                     <Tag icon={<YoutubeOutlined/>} color="#cd201f">Dance</Tag>

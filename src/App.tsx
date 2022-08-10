@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => createStyles({
     },
     body: {
         width: "100%",
-        padding: "30px",
         flex: 1,
         overflowY: "scroll",
         display: "flex",
@@ -32,7 +31,8 @@ const useStyles = makeStyles(theme => createStyles({
         alignItems: "center"
     },
     content: {
-        width: 1190,
+        width: 1190 + 60,
+        padding: 30
     },
     footer: {
         width: "100%",

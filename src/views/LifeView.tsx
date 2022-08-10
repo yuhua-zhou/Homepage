@@ -3,6 +3,7 @@ import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
 import {Button} from "antd";
 import lifeList from "../assets/database/lifes.json";
+import LifeItem from "../components/LifeItem";
 
 const useStyles = makeStyles(theme => createStyles({
     LifeView: {},
@@ -14,25 +15,6 @@ const useStyles = makeStyles(theme => createStyles({
         fontFamily: "microsoft雅黑",
         overflow: "hidden"
     },
-    lifeItem: {
-        margin: 10,
-        padding: 10,
-        background: "white",
-        display: "inline-block",
-        width: 272,
-        height: 230,
-        borderRadius: 3
-    },
-    lifeImg: {
-        width: "100%",
-        height: 150
-    },
-    lifeText: {
-        marginTop: 5
-    },
-    lifeDate: {
-        textAlign: "right"
-    },
     toggleBtn: {
         marginTop: 10,
         cursor: "pointer",
@@ -43,7 +25,7 @@ const useStyles = makeStyles(theme => createStyles({
 const LifeView = () => {
     const classes = useStyles();
     const [expand, setExpand] = useState(false);
-    const contentHeight = Math.ceil((lifeList.length) / 4) * 250 + 20;
+    const contentHeight = Math.ceil((lifeList.length) / 4) * 270 + 20;
 
     const onExpandToggle = () => {
         setExpand(!expand);
@@ -51,14 +33,12 @@ const LifeView = () => {
     return <div id={"Life"} className={classes.LifeView}>
         <Title title={"My Life"} subTitle={"I enjoy my life in my spare time"}/>
         <div className={classes.content}
-             style={{height: expand ? contentHeight : 250 + 20}}
+             style={{height: expand ? contentHeight : 270 + 20}}
         >
             {lifeList.map((item: any) => {
-                return <div className={classes.lifeItem}>
-                    <img className={classes.lifeImg}/>
-                    <div className={classes.lifeText}>{item.text}</div>
-                    <div className={classes.lifeDate}>{item.date}</div>
-                </div>
+                return <LifeItem
+                    snapshot={item.snapshot}
+                    text={item.text}/>
             })}
         </div>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
