@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => createStyles({
         transition: "0.8s",
     },
     lifeText: {
-        marginTop: 10
+        marginTop: 10,
+        textAlign: "center"
     },
 }));
 
@@ -40,7 +41,7 @@ const LifeItem: React.FC<LifeItemProps> = ({snapshot, text}) => {
     const classes = useStyles();
     return <div className={classes.lifeItem}>
         <div className={classes.imgContainer}>
-            <img className={classes.lifeImg} src={require("../assets/image/" + snapshot + ".jpg").default}/>
+            <img className={classes.lifeImg} src={require("../assets/image/life/" + snapshot).default}/>
         </div>
         <div className={classes.lifeText}>{text}</div>
     </div>

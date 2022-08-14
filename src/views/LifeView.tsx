@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => createStyles({
 
 const LifeView = () => {
     const classes = useStyles();
-    const [expand, setExpand] = useState(false);
+    const [expand, setExpand] = useState(true);
     const contentHeight = Math.ceil((lifeList.length) / 4) * 270 + 20;
 
     const onExpandToggle = () => {

@@ -5,6 +5,7 @@ import {
     CodeSandboxOutlined,
     VideoCameraOutlined,
     GlobalOutlined,
+    LinkOutlined,
     FundProjectionScreenOutlined
 } from "@ant-design/icons";
 
@@ -99,7 +100,7 @@ interface PublicationItemProps {
 
 const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, author, me, journal, year}) => {
     const classes = useStyles();
-    const imgSrc = require("../assets/image/" + teaser + ".png").default;
+    const imgSrc = require("../assets/image/publication/" + teaser).default;
     const authorList = useMemo(() => {
         return author.split(",")
     }, [author])
@@ -148,7 +149,7 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                        target={"_blank"}><FundProjectionScreenOutlined/>Presentation</a>
                     <a className={classes.link}
                        href={"https://www.baidu.com"}
-                       target={"_blank"}><FundProjectionScreenOutlined/>Cite</a>
+                       target={"_blank"}><LinkOutlined/>Cite</a>
                 </div>
                 ]
             </div>

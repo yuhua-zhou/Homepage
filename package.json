@@ -35,6 +35,7 @@
     "react-scripts": "4.0.3",
     "react-transition-group": "^4.4.2",
     "reselect": "^4.1.6",
+    "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.38.2",
     "typescript": "^4.3.2",
     "web-vitals": "^1.0.1"

@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "image": "chinavis2022.png",
+    "text": "Best Paper Honorable Mention",
+    "award": "honor"
+  },
+  {
+    "image": "scholarship2018.jpg",
+    "text": "Outstanding graduate student of Zhejiang Province",
+    "award": "honor"
+  },
+  {
+    "image": "scholarship2018.jpg",
+    "text": "National Scholarship",
+    "award": "honor"
+  },
+  {
+    "image": "scholarship2018.jpg",
+    "text": "Zhejiang Provincial Government Scholarship * 2",
+    "award": "honor"
+  },
+  {
+    "image": "softwareTesting2019.jpg",
+    "text": "National College Student Software Testing Contest - Third Prize in Zhejiang Division",
+    "award": "thirdAward"
+  },
+  {
+    "image": "CCCC2019.jpeg",
+    "text": "Second Prize of China University Computer Competition-Artificial Intelligence Creative Competition (Finals)",
+    "award": "secondAward"
+  },
+  {
+    "image": "zhejaingServiceOutsourcing2019.jpeg",
+    "text": "\"Hikang Cup\" Second Prize of the 8th Zhejiang Province Service Outsourcing Innovation Application Competition",
+    "award": "secondAward"
+  },
+  {
+    "image": "nationServiceOutsourcing2019.jpg",
+    "text": "The third prize of the 10th National College Student Service Outsourcing Innovation and Entrepreneurship Competition",
+    "award": "thirdAward"
+  },
+  {
+    "image": "Multimedia2018.jpg",
+    "text": "The Second Prize of Zhejiang University Student Multimedia Works Design Competition (Mobile Group)",
+    "award": "secondAward"
+  },
+  {
+    "image": "nationServiceOutsourcing2018.jpg",
+    "text": "Second Prize of the 9th China University Student Service Outsourcing Innovation and Entrepreneurship Competition",
+    "award": "secondAward"
+  }
+]

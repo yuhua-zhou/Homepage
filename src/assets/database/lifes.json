@@ -1,22 +1,30 @@
 [
   {
-    "snapshot": "myPicture2",
-    "text": "Take a trip in Chaka Salt Lake."
+    "snapshot": "chaka.jpg",
+    "text": "Visit Chaka Salt Lake on a trip."
   },
   {
-    "snapshot": "myPicture2",
-    "text": "Take a trip in Qinghai Lake."
+    "snapshot": "qinghai.jpg",
+    "text": "Take a trip to Qinghai Lake."
   },
   {
-    "snapshot": "myPicture2",
+    "snapshot": "moganshan.jpg",
     "text": "Team building activities in Huzhou."
   },
   {
-    "snapshot": "myPicture2",
+    "snapshot": "daming.jpg",
     "text": "Skiing on Daming Mountain."
   },
   {
-    "snapshot": "myPicture2",
+    "snapshot": "halloween.png",
+    "text": "Spend a good time in red container in Halloween."
+  },
+  {
+    "snapshot": "hangzhou.jpg",
+    "text": "Have a nice day in Hangzhou Paradise."
+  },
+  {
+    "snapshot": "basketball.png",
     "text": "Participate in the class basketball matches."
   }
 ]
