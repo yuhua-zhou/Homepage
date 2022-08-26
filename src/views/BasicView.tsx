@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => createStyles({
     },
     name: {
         fontSize: 27,
-        fontFamily: "microsoft雅黑",
+        fontFamily: "bigTitleFont",
         fontWeight: 600,
         color: "#7daed3",
         letterSpacing: 1,

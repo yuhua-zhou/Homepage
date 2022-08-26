@@ -1,10 +1,5 @@
 [
   {
-    "image": "chinavis2022.png",
-    "text": "Best Paper Honorable Mention",
-    "award": "honor"
-  },
-  {
     "image": "scholarship2018.jpg",
     "text": "Outstanding graduate student of Zhejiang Province",
     "award": "honor"
@@ -48,5 +43,10 @@
     "image": "nationServiceOutsourcing2018.jpg",
     "text": "Second Prize of the 9th China University Student Service Outsourcing Innovation and Entrepreneurship Competition",
     "award": "secondAward"
+  },
+  {
+    "image": "chinavis2022.png",
+    "text": "Best Paper Honorable Mention",
+    "award": "honor"
   }
 ]

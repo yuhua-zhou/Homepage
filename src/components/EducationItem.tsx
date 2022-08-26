@@ -12,9 +12,11 @@ const useStyles = makeStyles(theme => createStyles({
 
         "&:hover > $detailBox": {
             border: "3px solid #7daed3",
+            transition: "0.8s",
         },
-        "&:hover > $diamond": {
-            backgroundColor: "#bdd7e7"
+        "&:hover > $divider > $diamond": {
+            backgroundColor: "#6cafd6",
+            transition: "0.8s",
         },
     },
     dateTime: {
@@ -39,13 +41,15 @@ const useStyles = makeStyles(theme => createStyles({
         height: 17,
         margin: "0 10px",
         backgroundColor: "#222",
-        transform: "rotate(45deg)"
+        transform: "rotate(45deg)",
+        transition: "0.8s",
     },
     detailBox: {
         display: "flex",
         border: "3px solid #c2d6e6",
         padding: 10,
-        width: 370
+        width: 370,
+        transition: "0.8s",
     },
     schoolLogo: {
         width: 100,

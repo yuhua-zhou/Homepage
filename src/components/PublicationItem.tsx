@@ -95,12 +95,14 @@ interface PublicationItemProps {
     author: string,
     me: number,
     journal: string,
-    year: string
+    year: string,
+    links: any
 }
 
-const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, author, me, journal, year}) => {
+const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, author, me, journal, year, links}) => {
     const classes = useStyles();
     const imgSrc = require("../assets/image/publication/" + teaser).default;
+    const {pdf, website, video, presentation, cite, code} = links;
     const authorList = useMemo(() => {
         return author.split(",")
     }, [author])
@@ -135,20 +137,15 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                 <div style={{margin: "0 5px"}}>|</div>
                 <div>
                     Material:
-                    <a className={classes.link}
-                       href={"https://www.baidu.com"}
+                    <a className={classes.link} href={video}
                        target={"_blank"}><VideoCameraOutlined/>Video</a>,
-                    <a className={classes.link}
-                       href={"https://www.baidu.com"}
+                    <a className={classes.link} href={code}
                        target={"_blank"}><CodeSandboxOutlined/>Code</a>,
-                    <a className={classes.link}
-                       href={"https://www.baidu.com"}
+                    <a className={classes.link} href={website}
                        target={"_blank"}><GlobalOutlined/>Website</a>,
-                    <a className={classes.link}
-                       href={"https://www.baidu.com"}
+                    <a className={classes.link} href={presentation}
                        target={"_blank"}><FundProjectionScreenOutlined/>Presentation</a>
-                    <a className={classes.link}
-                       href={"https://www.baidu.com"}
+                    <a className={classes.link} href={cite}
                        target={"_blank"}><LinkOutlined/>Cite</a>
                 </div>
                 ]

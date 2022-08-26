@@ -6,7 +6,15 @@
     "author": "Yuhua Zhou, Xiyu Meng, Yanhong Wu, Tan Tang, Yingcai Wu",
     "me": 0,
     "journal": "ChinaVis2022",
-    "year": "2022"
+    "year": "2022",
+    "links": {
+      "pdf": "https://chinavis.org/2022/paper.html",
+      "video": "https://chinavis.org/2022/paper.html",
+      "code": "https://chinavis.org/2022/paper.html",
+      "website": "https://chinavis.org/2022/paper.html",
+      "presentation": "https://chinavis.org/2022/paper.html",
+      "cite": "https://chinavis.org/2022/paper.html"
+    }
   },
   {
     "teaser": "warehouse.png",
@@ -15,7 +23,15 @@
     "author": "Junxiu Tang, Yuhua Zhou, Tan Tang, Di Weng, Boyang Xie, Lingyun Yu, Huaqiang Zhang, and Yingcai Wu",
     "me": 1,
     "journal": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2021)",
-    "year": "2021"
+    "year": "2021",
+    "links": {
+      "pdf": "https://ieeexplore.ieee.org/document/9557224",
+      "video": "https://ieeexplore.ieee.org/document/9557224",
+      "code": "https://ieeexplore.ieee.org/document/9557224",
+      "website": "https://ieeexplore.ieee.org/document/9557224",
+      "presentation": "https://ieeexplore.ieee.org/document/9557224",
+      "cite": "https://ieeexplore.ieee.org/document/9557224"
+    }
   },
   {
     "teaser": "transVideo.png",
@@ -24,6 +40,14 @@
     "author": "Junxiu Tang, Lingyun Yu, Tan Tang, Xinhuan Shu, Lu Ying, Yuhua Zhou, Peiran Ren, and Yingcai Wu",
     "me": 5,
     "journal": "IEEE VIS 2020 Short Papers",
-    "year": "2020"
+    "year": "2020",
+    "links": {
+      "pdf": "https://ieeexplore.ieee.org/document/9331289",
+      "video": "https://ieeexplore.ieee.org/document/9331289",
+      "code": "https://ieeexplore.ieee.org/document/9331289",
+      "website": "https://ieeexplore.ieee.org/document/9331289",
+      "presentation": "https://ieeexplore.ieee.org/document/9331289",
+      "cite": "https://ieeexplore.ieee.org/document/9331289"
+    }
   }
 ]

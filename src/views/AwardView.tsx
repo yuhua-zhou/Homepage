@@ -14,19 +14,25 @@ import AwardItem from "../components/AwardItem";
 import awardList from "../assets/database/awards.json";
 
 const useStyles = makeStyles(theme => createStyles({
-    AwardView: {},
+    AwardView: {
+        position: "relative"
+    },
     icon: {
         width: 23,
         height: 23,
         marginRight: 5
     },
     awardCup: {
-        height: 100
+        position: "absolute",
+        height: 150,
+        right: 0,
+        top: 0
     },
     controlBar: {
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginBottom: 5
     },
     radioGroup: {
         display: "flex",
