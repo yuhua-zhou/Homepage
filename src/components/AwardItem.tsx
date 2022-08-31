@@ -44,8 +44,8 @@ const AwardItem: React.FC<AwardItemProps> = ({image, text, award}) => {
         });
         // @ts-ignore
         resizeObserver.observe(currentNode.current);
-
     }, [])
+
 
     return <div className={classes.AwardItem} ref={currentNode}>
 

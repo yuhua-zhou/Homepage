@@ -4,6 +4,7 @@ import Title from "../components/Title";
 import {Button} from "antd";
 import lifeList from "../assets/database/lifes.json";
 import LifeItem from "../components/LifeItem";
+import {getListKey} from "../utils/utils";
 
 const useStyles = makeStyles(theme => createStyles({
     LifeView: {},
@@ -37,8 +38,8 @@ const LifeView = () => {
         >
             {lifeList.map((item: any) => {
                 return <LifeItem
-                    snapshot={item.snapshot}
-                    text={item.text}/>
+                    key={getListKey(item)}
+                    {...item}/>
             })}
         </div>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>

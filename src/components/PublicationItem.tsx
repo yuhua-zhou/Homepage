@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => createStyles({
 
         "&:hover > $year": {
             backgroundColor: "red",
-            transition: "0.8s",
+            transition: "0.5s",
         }
     },
     teaser: {
@@ -118,9 +118,9 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
             <div className={classes.author}>
                 {authorList.map((item, index) => {
                     if (index === me) {
-                        return <div className={classes.meAuthor}>{item}, </div>
+                        return <div key={item} className={classes.meAuthor}>{item}, </div>
                     }
-                    return <div>{item}, </div>
+                    return <div key={item}>{item}, </div>
                 })}
             </div>
 

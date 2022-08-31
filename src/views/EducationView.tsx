@@ -3,6 +3,7 @@ import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
 import EducationItem from "../components/EducationItem";
 import educationList from "../assets/database/education.json";
+import {getListKey} from "../utils/utils";
 
 const useStyles = makeStyles(theme => createStyles({
     EducationView: {},
@@ -14,10 +15,11 @@ const useStyles = makeStyles(theme => createStyles({
 const EducationView = () => {
     const classes = useStyles();
     return <div id={"Education"} className={classes.EducationView}>
-        <Title title={"Education"} subTitle={"where i grow up"}/>
+        <Title title={"Education"} subTitle={"my growth"}/>
         <div className={classes.content}>
             {educationList.map((item) => {
-                return <EducationItem {...item}/>
+                return <EducationItem
+                    key={getListKey(item)} {...item}/>
             })}
         </div>
     </div>

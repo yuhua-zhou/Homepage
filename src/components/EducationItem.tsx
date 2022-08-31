@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => createStyles({
         margin: "0 10px",
         backgroundColor: "#222",
         transform: "rotate(45deg)",
-        transition: "0.8s",
+        transition: "0.5s",
     },
     detailBox: {
         display: "flex",

@@ -12,6 +12,7 @@ import awardCupImg from "../assets/image/award_cup.png"
 import AwardItem from "../components/AwardItem";
 
 import awardList from "../assets/database/awards.json";
+import {getListKey} from "../utils/utils";
 
 const useStyles = makeStyles(theme => createStyles({
     AwardView: {
@@ -105,12 +106,13 @@ const AwardView = () => {
     }, [activeItems])
 
     return <div id={"Awards"} className={classes.AwardView}>
-        <Title title={"Award"} subTitle={"what i gained from competition"}/>
+        <Title title={"Award"} subTitle={"my honors & awards & certifications"}/>
         <div className={classes.controlBar}>
             <div className={classes.radioGroup}>
                 {filterList.map((item, i) => {
                     const {icon, text} = item;
                     return <div className={classes.radioBtn}
+                                key={text}
                                 style={getStyle(i)}
                                 onClick={() => checkToggle(i)}>
                         <img src={icon} className={classes.icon}/>
@@ -123,7 +125,7 @@ const AwardView = () => {
         </div>
         <div className={classes.awardList}>
             {filterAwards.map((item) => {
-                return <AwardItem {...item}/>;
+                return <AwardItem key={getListKey(item)} {...item}/>;
             })}
         </div>
     </div>

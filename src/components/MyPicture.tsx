@@ -17,7 +17,9 @@ const useStyles = makeStyles(theme => createStyles({
         borderRadius: "50%",
         marginTop: 100,
         marginBottom: 15,
-        animation: "swing 2s infinite"
+        "&:hover":{
+            animation: "swing 2s"
+        }
     },
     switchBar: {
         display: "flex"
@@ -55,6 +57,7 @@ const MyPicture = () => {
         <div className={classes.switchBar}>
             {myPictures.map((item, index) => {
                 return <div
+                    key={item}
                     className={index === picIndex ? classes.switchBtnActive : classes.switchBtn}
                     onClick={() => onSwitch(index)}/>
             })}

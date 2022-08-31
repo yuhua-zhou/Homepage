@@ -5,6 +5,7 @@ import mileStoneImg from "../assets/image/milestone.png";
 import mileStoneList from "../assets/database/milestonelist.json";
 import MileStoneItem from "../components/MileStoneItem";
 import MileStoneYearHeader from "../components/MileStoneYearHeader";
+import {getListKey} from "../utils/utils";
 
 const useStyles = makeStyles(theme => createStyles({
     MileStoneView: {},
@@ -45,10 +46,10 @@ const MileStoneView = () => {
         <div className={classes.content}>
             <div className={classes.mileStoneList}>
                 {years.map((year) => {
-                    return <div>
+                    return <div key={getListKey(year)}>
                         <MileStoneYearHeader year={year}/>
                         {myMileStones[year].map((item: any) => {
-                            return <MileStoneItem {...item}/>
+                            return <MileStoneItem key={getListKey(item)} {...item}/>
                         })}
                     </div>
                 })}
