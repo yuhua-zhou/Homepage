@@ -131,7 +131,7 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                 <div>
                     Paper:
                     <a className={classes.link}
-                       href={"https://www.baidu.com"}
+                       href={pdf}
                        target={"_blank"}><PaperClipOutlined/>PDF</a>
                 </div>
                 <div style={{margin: "0 5px"}}>|</div>

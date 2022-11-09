@@ -1,11 +1,11 @@
 [
   {
-    "image": "scholarship2018.jpg",
+    "image": "outstanding_graduate .jpg",
     "text": "Outstanding graduate student of Zhejiang Province",
     "award": "honor"
   },
   {
-    "image": "scholarship2018.jpg",
+    "image": "national_Scholarship.jpg",
     "text": "National Scholarship",
     "award": "honor"
   },
@@ -45,8 +45,33 @@
     "award": "secondAward"
   },
   {
+    "image": "pat1.jpeg",
+    "text": "Programming Ability Test",
+    "award": "certificate"
+  },
+  {
     "image": "chinavis2022.png",
     "text": "Best Paper Honorable Mention",
     "award": "honor"
+  },
+  {
+    "image": "software_copyright1.jpeg",
+    "text": "Software Copyright",
+    "award": "certificate"
+  },
+  {
+    "image": "software_copyright2.jpeg",
+    "text": "Software Copyright",
+    "award": "certificate"
+  },
+  {
+    "image": "software_copyright3.jpeg",
+    "text": "Software Copyright",
+    "award": "certificate"
+  },
+  {
+    "image": "software_copyright4.jpeg",
+    "text": "Software Copyright",
+    "award": "certificate"
   }
 ]

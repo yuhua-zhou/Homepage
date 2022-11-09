@@ -6,7 +6,8 @@ import {Image} from 'antd';
 const useStyles = makeStyles(theme => createStyles({
     AwardItem: {
         boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-        margin: 7
+        margin: 7,
+        overflow: "hidden"
     },
     image: {
         height: 180,

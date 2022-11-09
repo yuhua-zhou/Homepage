@@ -26,7 +26,6 @@ const useStyles = makeStyles(theme => createStyles({
         margin: "0 3px",
         cursor: "pointer",
         lineHeight: "53px",
-        textTransform: "uppercase",
         transition: "0.5s",
 
         "&:hover": {
@@ -40,7 +39,6 @@ const useStyles = makeStyles(theme => createStyles({
         cursor: "pointer",
         backgroundColor: "#6baed6",
         lineHeight: "53px",
-        textTransform: "uppercase",
     },
     blogBtn: {
         height: '53px',

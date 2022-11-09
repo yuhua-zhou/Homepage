@@ -101,10 +101,10 @@ const BasicView = () => {
                     to open the black box of AI and make it interpretable with Visualization.
                 </div>
                 <div className={classes.paragraph}>
-                    I have practice in Zhejiang lab where the goal is to bridge the research with industry (2021/03
+                    I have practiced in Zhejiang lab, where the goal is to bridge the research with industry (2021/03
                     - now). I contributed as frontend software developer to participate in developing the big data
                     platform called
-                    <a className={classes.link} href={"https://nebula-dev.zjvis.net"} target={"_blank"}>
+                    <a className={classes.link} href={"https://nebula.zjvis.net"} target={"_blank"}>
                         Nebula
                     </a>, in which I improve my coding skills. In my spare time, II enjoy taking exercise to strengthen
                     my body as well as to refresh my tied brain, especially playing basketball. Besides, watching
