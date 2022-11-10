@@ -5,23 +5,19 @@ import {Image} from 'antd';
 
 const useStyles = makeStyles(theme => createStyles({
     AwardItem: {
-        boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-        margin: 7,
-        overflow: "hidden"
-    },
-    image: {
-        height: 180,
-    },
-    text: {
-        padding: "10px 5px",
         display: "flex",
         alignItems: "center",
-        fontWeight: 600
+        fontWeight: 600,
+        fontSize: 16,
+        margin: 5
+    },
+    text: {
+        margin: "0 10px",
+        textDecoration:"underline"
     },
     icon: {
-        width: 18,
-        height: 18,
-        marginRight: 5
+        width: 20,
+        height: 20,
     }
 }));
 
@@ -33,31 +29,16 @@ interface AwardItemProps {
 
 const AwardItem: React.FC<AwardItemProps> = ({image, text, award}) => {
     const classes = useStyles();
-    const [textWidth, setTextWidth] = useState(0);
-    const currentNode = useRef(null);
 
-    useEffect(() => {
-        const resizeObserver = new ResizeObserver((entries, observer) => {
-            for (const entry of entries) {
-                const {left, top, width, height} = entry.contentRect;
-                setTextWidth(width);
-            }
-        });
-        // @ts-ignore
-        resizeObserver.observe(currentNode.current);
-    }, [])
+    return <div className={classes.AwardItem}>
 
+        <img src={require("../assets/image/" + award + ".png").default}
+             className={classes.icon}/>
 
-    return <div className={classes.AwardItem} ref={currentNode}>
+        <div className={classes.text}>{text}</div>
 
-        <Image height={180}
+        <Image height={30}
                src={require("../assets/image/award/" + image).default}/>
-
-        <div className={classes.text} style={{width: textWidth}}>
-            <img src={require("../assets/image/" + award + ".png").default}
-                 className={classes.icon}/>
-            <div>{text}</div>
-        </div>
     </div>
 }
 

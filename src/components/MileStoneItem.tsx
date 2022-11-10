@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => createStyles({
     },
     line: {
         width: 2,
-        height: 10,
+        height: 7,
         background: "#f0f0f0"
     },
     circle: {

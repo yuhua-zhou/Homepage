@@ -35,96 +35,19 @@ const useStyles = makeStyles(theme => createStyles({
         justifyContent: "space-between",
         marginBottom: 5
     },
-    radioGroup: {
-        display: "flex",
-        alignItems: "center",
-    },
-    radioBtn: {
-        display: "flex",
-        alignItems: "center",
-        fontSize: 15,
-        padding: 3,
-        borderRadius: 1,
-        margin: "0 3px",
-        fontWeight: 600,
-        border: "1.5px solid #233",
-        cursor: "pointer"
-    },
-    awardList: {
-        display: "flex",
-        flexWrap: "wrap"
-    }
+    awardList: {}
 }));
 
 const AwardView = () => {
     const classes = useStyles();
-    const filterList = [
-        {icon: firstAward, text: "First Award", color: "#d7191c"},
-        {icon: secondAward, text: "Second Award", color: "#fdae61"},
-        {icon: thirdAward, text: "Third Award", color: "#2b83ba"},
-        {icon: honor, text: "Honor", color: "#abdda4"},
-        {icon: certificate, text: "Certificate", color: "#998ec3"},
-    ];
-
-    const [activeItems, setActiveItems] = useState([true, true, true, true, true]);
-
-    const getStyle = useCallback((i: number) => {
-        const {color} = filterList[i];
-        let newStyle: any = {};
-
-        if (activeItems[i]) {
-            newStyle = {
-                color: "white",
-                background: color,
-                borderColor: color
-            }
-        } else {
-            newStyle = {
-                color,
-                borderColor: color
-            }
-        }
-        return newStyle;
-    }, [activeItems]);
-
-    const checkToggle = (i: number) => {
-        let newList = activeItems.slice();
-        newList[i] = !newList[i];
-        setActiveItems(newList);
-    }
-
-    const filterAwards = useMemo(() => {
-        const temp = filterList.map((item) => {
-            return item.text.replace(" ", "").toLowerCase();
-        });
-
-        return awardList.filter((item) => {
-            const {award} = item;
-            const index = temp.findIndex((t) => t === award.toLowerCase());
-            return activeItems[index];
-        })
-    }, [activeItems])
 
     return <div id={"Awards"} className={classes.AwardView}>
         <Title title={"Award"} subTitle={"my honors & awards & certifications"}/>
         <div className={classes.controlBar}>
-            <div className={classes.radioGroup}>
-                {filterList.map((item, i) => {
-                    const {icon, text} = item;
-                    return <div className={classes.radioBtn}
-                                key={text}
-                                style={getStyle(i)}
-                                onClick={() => checkToggle(i)}>
-                        <img src={icon} className={classes.icon}/>
-                        <span>{text}</span>
-                    </div>
-                })}
-            </div>
-
             <img src={awardCupImg} className={classes.awardCup}/>
         </div>
         <div className={classes.awardList}>
-            {filterAwards.map((item) => {
+            {awardList.map((item) => {
                 return <AwardItem key={getListKey(item)} {...item}/>;
             })}
         </div>

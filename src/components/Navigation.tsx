@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import {RightOutlined} from "@ant-design/icons";
 import logo from "../assets/image/logo.png";
 import {useGlobalState} from "../store/useData";
 import {useDispatch} from "react-redux";
+import ResizeObserver from "resize-observer-polyfill";
 
 const useStyles = makeStyles(theme => createStyles({
     Navigation: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => createStyles({
         marginRight: 30
     },
     item: {
-        padding: "0 30px",
+        padding: "0 25px",
         margin: "0 3px",
         cursor: "pointer",
         lineHeight: "53px",
@@ -34,7 +35,7 @@ const useStyles = makeStyles(theme => createStyles({
         }
     },
     itemSelected: {
-        padding: "0 30px",
+        padding: "0 25px",
         margin: "0 3px",
         cursor: "pointer",
         backgroundColor: "#6baed6",
@@ -73,9 +74,10 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const {navigateSelectedIndex} = useGlobalState();
+    const currentNode = useRef(null);
 
     const onClick = (i: number) => {
-        dispatch({type:"SetNavigateSelectedIndex", payload:i});
+        dispatch({type: "SetNavigateSelectedIndex", payload: i});
         onItemClick(navigations[i]);
     }
 
@@ -84,7 +86,21 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
         window.open("https://github.com/Zyh533")
     }
 
-    return <div className={classes.Navigation}>
+    useEffect(() => {
+        const resizeObserver = new ResizeObserver((entries, observer) => {
+            for (const entry of entries) {
+                const {left, top, width, height} = entry.contentRect;
+
+                if (width <= 1000) {
+                    console.log(width);
+                }
+            }
+        });
+        // @ts-ignore
+        resizeObserver.observe(currentNode.current);
+    }, [])
+
+    return <div className={classes.Navigation} ref={currentNode}>
         <img className={classes.logo} src={logo}/>
 
         {navigations.map((item, i) => {

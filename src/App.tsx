@@ -10,6 +10,7 @@ import LifeView from "./views/LifeView";
 import ContactView from "./views/ContactView";
 import {Divider} from "antd";
 import MileStoneView from "./views/MileStoneView";
+import Footer from "./components/Footer";
 import {findNearestInArray} from "./utils/utils";
 import {useDispatch} from "react-redux";
 
@@ -33,11 +34,6 @@ const useStyles = makeStyles(theme => createStyles({
     content: {
         width: 1190 + 60,
         padding: 30
-    },
-    footer: {
-        width: "100%",
-        height: 15,
-        background: "#7daed3"
     }
 }));
 
@@ -103,7 +99,7 @@ const App = () => {
                 <Divider/>
                 <ContactView/>
             </div>
-            <div className={classes.footer}/>
+            <Footer/>
         </div>
     </div>
 }
