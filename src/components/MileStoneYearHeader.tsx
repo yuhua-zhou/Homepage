@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => createStyles({
         display: "flex",
         alignItems: "center",
         fontFamily: "microsoft雅黑",
-        fontSize: 16,
+        fontSize: 15,
         paddingLeft: 20
     },
     symbol: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => createStyles({
     },
     line: {
         width: 2,
-        height: 10,
+        height: 7,
         background: "#f0f0f0"
     },
     arrow: {

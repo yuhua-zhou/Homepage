@@ -56,6 +56,7 @@ const useStyles = makeStyles(theme => createStyles({
         fontWeight: 700,
         color: "#474747",
         fontSize: 15,
+        textDecoration: "underline"
     },
     journal: {
         marginTop: 10,

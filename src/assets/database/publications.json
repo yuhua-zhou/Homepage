@@ -7,6 +7,11 @@
     "me": 0,
     "journal": "ChinaVis2022",
     "year": "2022",
+    "categories": [
+      "Visualization",
+      "Computer Vision",
+      "Nature Language Process"
+    ],
     "links": {
       "pdf": "https://link.springer.com/article/10.1007/s12650-022-00894-z",
       "video": "https://link.springer.com/article/10.1007/s12650-022-00894-z",
@@ -24,6 +29,9 @@
     "me": 1,
     "journal": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2021)",
     "year": "2021",
+    "categories": [
+      "Visualization"
+    ],
     "links": {
       "pdf": "https://ieeexplore.ieee.org/document/9557224",
       "video": "https://ieeexplore.ieee.org/document/9557224",
@@ -41,6 +49,9 @@
     "me": 5,
     "journal": "IEEE VIS 2020 Short Papers",
     "year": "2020",
+    "categories": [
+      "Visualization"
+    ],
     "links": {
       "pdf": "https://ieeexplore.ieee.org/document/9331289",
       "video": "https://ieeexplore.ieee.org/document/9331289",
