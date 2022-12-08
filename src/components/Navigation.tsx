@@ -1,10 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
-import {RightOutlined} from "@ant-design/icons";
+import {RightOutlined, EyeOutlined} from "@ant-design/icons";
 import logo from "../assets/image/logo.png";
 import {useGlobalState} from "../store/useData";
 import {useDispatch} from "react-redux";
 import ResizeObserver from "resize-observer-polyfill";
+import {Popover} from "antd";
 
 const useStyles = makeStyles(theme => createStyles({
     Navigation: {
@@ -20,7 +21,8 @@ const useStyles = makeStyles(theme => createStyles({
     logo: {
         height: 35,
         marginLeft: 25,
-        marginRight: 30
+        marginRight: 30,
+        cursor: "pointer"
     },
     item: {
         padding: "0 25px",
@@ -86,6 +88,16 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
         window.open("https://github.com/Zyh533")
     }
 
+    const popupContent = () => {
+        // const res = await fetch("url");
+        // https://github.com/finisky/finicounter
+        const count = 1;
+        return <div>
+            <EyeOutlined style={{marginRight: 5}}/>
+            Visited Counts: <span id="finicount_views"/>
+        </div>
+    }
+
     useEffect(() => {
         const resizeObserver = new ResizeObserver((entries, observer) => {
             for (const entry of entries) {
@@ -101,7 +113,10 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
     }, [])
 
     return <div className={classes.Navigation} ref={currentNode}>
-        <img className={classes.logo} src={logo}/>
+
+        <Popover content={popupContent} title="" trigger="click">
+            <img className={classes.logo} src={logo}/>
+        </Popover>
 
         {navigations.map((item, i) => {
             return <div className={i === navigateSelectedIndex ? classes.itemSelected : classes.item}
