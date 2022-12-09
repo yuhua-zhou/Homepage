@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "./static/css/main.63a55142.chunk.css",
-    "main.js": "./static/js/main.351ebc0c.chunk.js",
-    "main.js.map": "./static/js/main.351ebc0c.chunk.js.map",
+    "main.js": "./static/js/main.ddd9669d.chunk.js",
+    "main.js.map": "./static/js/main.ddd9669d.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.30318736.js",
     "runtime-main.js.map": "./static/js/runtime-main.30318736.js.map",
     "static/css/2.6d56ab43.chunk.css": "./static/css/2.6d56ab43.chunk.css",
-    "static/js/2.816b0128.chunk.js": "./static/js/2.816b0128.chunk.js",
-    "static/js/2.816b0128.chunk.js.map": "./static/js/2.816b0128.chunk.js.map",
+    "static/js/2.4ef4b1d5.chunk.js": "./static/js/2.4ef4b1d5.chunk.js",
+    "static/js/2.4ef4b1d5.chunk.js.map": "./static/js/2.4ef4b1d5.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.6d56ab43.chunk.css.map": "./static/css/2.6d56ab43.chunk.css.map",
     "static/css/main.63a55142.chunk.css.map": "./static/css/main.63a55142.chunk.css.map",
-    "static/js/2.816b0128.chunk.js.LICENSE.txt": "./static/js/2.816b0128.chunk.js.LICENSE.txt",
+    "static/js/2.4ef4b1d5.chunk.js.LICENSE.txt": "./static/js/2.4ef4b1d5.chunk.js.LICENSE.txt",
     "static/media/CCCC2019.jpeg": "./static/media/CCCC2019.6a00c428.jpeg",
     "static/media/Multimedia2018.jpg": "./static/media/Multimedia2018.6300dd08.jpg",
     "static/media/alipay.png": "./static/media/alipay.3ab769be.png",
@@ -55,8 +55,8 @@
   "entrypoints": [
     "static/js/runtime-main.30318736.js",
     "static/css/2.6d56ab43.chunk.css",
-    "static/js/2.816b0128.chunk.js",
+    "static/js/2.4ef4b1d5.chunk.js",
     "static/css/main.63a55142.chunk.css",
-    "static/js/main.351ebc0c.chunk.js"
+    "static/js/main.ddd9669d.chunk.js"
   ]
 }
