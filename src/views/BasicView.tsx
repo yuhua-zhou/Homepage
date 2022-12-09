@@ -83,7 +83,10 @@ const BasicView = () => {
                         Interactive Data Group (IDG)
                     </a>
                     of State key Lab of Cad & CG, College of Computer Technology, Zhejiang University, supervised by
-                    Prof. Yingcai Wu. I received my Bachelor’s degree of Computer Science and Technology from Zhejiang
+                    <a className={classes.link} href={"https://person.zju.edu.cn/ycwu"} target={"_blank"}>
+                    Prof. Yingcai Wu. 
+                    </a>
+                    I received my Bachelor’s degree of Computer Science and Technology from Zhejiang
                     Sci-tech University.
                 </div>
                 <div className={classes.paragraph}>
@@ -101,7 +104,11 @@ const BasicView = () => {
                     to open the black box of AI and make it interpretable with Visualization.
                 </div>
                 <div className={classes.paragraph}>
-                    I have practiced in Zhejiang lab, where the goal is to bridge the research with industry (2021/03
+                    I have practiced in 
+                    <a className={classes.link} href={"https://www.zhejianglab.com/"} target={"_blank"}>
+                        Zhejiang lab
+                    </a>
+                    , where the goal is to bridge the research with industry (2021/03
                     - now). I contributed as frontend software developer to participate in developing the big data
                     platform called
                     <a className={classes.link} href={"https://nebula.zjvis.net"} target={"_blank"}>

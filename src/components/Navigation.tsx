@@ -78,6 +78,8 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
     const {navigateSelectedIndex} = useGlobalState();
     const currentNode = useRef(null);
 
+    const [visitCount, setVisitCount] = useState(0);
+
     const onClick = (i: number) => {
         dispatch({type: "SetNavigateSelectedIndex", payload: i});
         onItemClick(navigations[i]);
@@ -89,12 +91,10 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
     }
 
     const popupContent = () => {
-        // const res = await fetch("url");
         // https://github.com/finisky/finicounter
-        const count = 1;
         return <div>
             <EyeOutlined style={{marginRight: 5}}/>
-            Visited Counts: <span id="finicount_views"/>
+            Visited Counts: <span>{visitCount}</span>
         </div>
     }
 
@@ -110,6 +110,19 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
         });
         // @ts-ignore
         resizeObserver.observe(currentNode.current);
+
+        // get visit count
+        fetch("https://finicounter.vercel.app/counter?host=zyh533.github.io").then((res)=>{
+            if(res.status === 200){
+                res.json().then(data=>{
+                    // @ts-ignore
+                    setVisitCount(data.views);
+                })
+            }
+        },()=>{
+            console.log("network error!");
+        })
+
     }, [])
 
     return <div className={classes.Navigation} ref={currentNode}>
