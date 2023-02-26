@@ -41,7 +41,9 @@ const LifeItem: React.FC<LifeItemProps> = ({snapshot, text}) => {
     const classes = useStyles();
     return <div className={classes.lifeItem}>
         <div className={classes.imgContainer}>
-            <img className={classes.lifeImg} src={require("../assets/image/life/" + snapshot).default}/>
+            <img className={classes.lifeImg}
+                 alt={""}
+                 src={require("../assets/image/life/" + snapshot).default}/>
         </div>
         <div className={classes.lifeText}>{text}</div>
     </div>

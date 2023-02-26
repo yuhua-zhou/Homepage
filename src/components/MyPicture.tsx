@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import "../animation.css";
-
 import myPicture from "../assets/image/myPicture.png";
 import myPicture2 from "../assets/image/myPicture2.jpg";
+import {BreakPoints} from "../utils/constants";
+
+const {laptop, tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     myPicture: {
@@ -12,14 +14,20 @@ const useStyles = makeStyles(theme => createStyles({
         alignItems: "center"
     },
     picture: {
+        [theme.breakpoints.down(tablet)]: {
+            width: 250,
+            height: 250,
+        },
         width: 300,
         height: 300,
         borderRadius: "50%",
-        marginTop: 100,
         marginBottom: 15,
-        "&:hover":{
+        "&:hover": {
             animation: "swing 2s"
-        }
+        },
+        [theme.breakpoints.up(laptop)]: {
+            marginTop: 100,
+        },
     },
     switchBar: {
         display: "flex"
@@ -52,7 +60,7 @@ const MyPicture = () => {
     }
 
     return <div className={classes.myPicture}>
-        <img className={classes.picture} src={myPictures[picIndex]}/>
+        <img className={classes.picture} src={myPictures[picIndex]} alt={""}/>
 
         <div className={classes.switchBar}>
             {myPictures.map((item, index) => {

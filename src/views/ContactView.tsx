@@ -9,12 +9,18 @@ import wechatQRcode from "../assets/image/wechat.png";
 import dingtalkQRcode from "../assets/image/dingtalk.png";
 import alipayQRcode from "../assets/image/alipay.png";
 import qqQRcode from "../assets/image/qq.png";
+import {BreakPoints} from "../utils/constants";
+
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     ContactView: {
         fontFamily: "microsoft雅黑"
     },
     content: {
+        [theme.breakpoints.down(tablet)]: {
+            flexDirection: "column"
+        },
         margin: 20,
         display: "flex",
         alignItems: "center",
@@ -35,6 +41,13 @@ const useStyles = makeStyles(theme => createStyles({
         backgroundColor: "#b6b6b6",
         margin: "0 8px"
     },
+    QRCodeList: {
+        [theme.breakpoints.down(tablet)]: {
+            flexWrap: "wrap",
+            justifyContent: "center"
+        },
+        display: "flex"
+    },
     QRCode: {
         display: "flex",
         flexDirection: "column",
@@ -54,7 +67,7 @@ const ContactView = () => {
         <div className={classes.content}>
             <div>
                 <div className={classes.contactItem}>
-                    <img className={classes.icon} src={email}/>
+                    <img className={classes.icon} src={email} alt={""}/>
                     <div className={classes.verticalLine}/>
                     <div>
                         <div style={{fontWeight: 500, fontSize: 16}}>Email Me</div>
@@ -62,15 +75,15 @@ const ContactView = () => {
                     </div>
                 </div>
                 <div className={classes.contactItem}>
-                    <img className={classes.icon} src={phone}/>
+                    <img className={classes.icon} src={phone} alt={""}/>
                     <div className={classes.verticalLine}/>
                     <div>
                         <div style={{fontWeight: 500, fontSize: 16}}>Call Me</div>
-                        <div>(+86)159-8881-6183</div>
+                        <div>(+86)159-xxx-6183</div>
                     </div>
                 </div>
                 <div className={classes.contactItem}>
-                    <img className={classes.icon} src={location}/>
+                    <img className={classes.icon} src={location} alt={""}/>
                     <div className={classes.verticalLine}/>
                     <div>
                         <div style={{fontWeight: 500, fontSize: 16}}>Find Me</div>
@@ -78,21 +91,21 @@ const ContactView = () => {
                     </div>
                 </div>
             </div>
-            <div style={{display: "flex"}}>
+            <div className={classes.QRCodeList}>
                 <div className={classes.QRCode}>
-                    <img className={classes.QRCodeImg} src={wechatQRcode}/>
+                    <img className={classes.QRCodeImg} src={wechatQRcode} alt={""}/>
                     <div>WeChat</div>
                 </div>
                 <div className={classes.QRCode}>
-                    <img className={classes.QRCodeImg} src={dingtalkQRcode}/>
+                    <img className={classes.QRCodeImg} src={dingtalkQRcode} alt={""}/>
                     <div>DingTalk</div>
                 </div>
                 <div className={classes.QRCode}>
-                    <img className={classes.QRCodeImg} src={qqQRcode}/>
+                    <img className={classes.QRCodeImg} src={qqQRcode} alt={""}/>
                     <div>QQ</div>
                 </div>
                 <div className={classes.QRCode}>
-                    <img className={classes.QRCodeImg} src={alipayQRcode}/>
+                    <img className={classes.QRCodeImg} src={alipayQRcode} alt={""}/>
                     <div>AliPay</div>
                 </div>
             </div>

@@ -1,8 +1,14 @@
 import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
+import {BreakPoints} from "../utils/constants";
+
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     MileStoneYearHeader: {
+        [theme.breakpoints.down(tablet)]: {
+            paddingLeft: 0
+        },
         display: "flex",
         alignItems: "center",
         fontFamily: "microsoft雅黑",
@@ -27,6 +33,9 @@ const useStyles = makeStyles(theme => createStyles({
         background: "#f0f0f0"
     },
     arrow: {
+        [theme.breakpoints.down(tablet)]: {
+            width: 92,
+        },
         width: 104,
         height: 2,
         background: "#f0f0f0"

@@ -4,11 +4,16 @@ import Title from "../components/Title";
 import EducationItem from "../components/EducationItem";
 import educationList from "../assets/database/education.json";
 import {getListKey} from "../utils/utils";
+import {BreakPoints} from "../utils/constants";
+
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     EducationView: {},
     content: {
-        display: "flex"
+        [theme.breakpoints.up(tablet)]: {
+            display: "flex"
+        },
     }
 }));
 

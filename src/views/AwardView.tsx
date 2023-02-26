@@ -1,18 +1,14 @@
-import React, {useCallback, useMemo, useState} from "react";
+import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
-
-import firstAward from "../assets/image/firstAward.png";
-import secondAward from "../assets/image/secondAward.png";
-import thirdAward from "../assets/image/thirdAward.png";
-import honor from "../assets/image/honor.png";
-import certificate from "../assets/image/certificate.png";
-
 import awardCupImg from "../assets/image/award_cup.png"
 import AwardItem from "../components/AwardItem";
 
 import awardList from "../assets/database/awards.json";
 import {getListKey} from "../utils/utils";
+import {BreakPoints} from "../utils/constants";
+
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     AwardView: {
@@ -24,6 +20,9 @@ const useStyles = makeStyles(theme => createStyles({
         marginRight: 5
     },
     awardCup: {
+        [theme.breakpoints.down(tablet)]: {
+            display: "none"
+        },
         position: "absolute",
         height: 150,
         right: 0,
@@ -44,7 +43,7 @@ const AwardView = () => {
     return <div id={"Awards"} className={classes.AwardView}>
         <Title title={"Award"} subTitle={"my honors & awards & certifications"}/>
         <div className={classes.controlBar}>
-            <img src={awardCupImg} className={classes.awardCup}/>
+            <img src={awardCupImg} className={classes.awardCup} alt={""}/>
         </div>
         <div className={classes.awardList}>
             {awardList.map((item) => {

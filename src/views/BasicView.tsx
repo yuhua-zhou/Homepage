@@ -9,24 +9,29 @@ import {
     TwitterOutlined,
     YoutubeOutlined,
 } from '@ant-design/icons';
+import {BreakPoints} from "../utils/constants";
+
+const {laptop, tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     BasicView: {},
-    picture: {
-        width: 300,
-        height: 300,
-        borderRadius: "50%",
-        marginTop: 70,
-        marginBottom: 70
-    },
     body: {
-        display: "flex"
+        [theme.breakpoints.down(laptop)]: {
+            flexDirection: "column"
+        },
+        display: "flex",
     },
     content: {
+        [theme.breakpoints.down(laptop)]: {
+            marginLeft: 10,
+        },
         marginLeft: 50,
         marginTop: 20
     },
     name: {
+        [theme.breakpoints.down(tablet)]: {
+            fontSize: 23,
+        },
         fontSize: 27,
         fontFamily: "bigTitleFont",
         fontWeight: 600,
@@ -79,14 +84,14 @@ const BasicView = () => {
 
                 <div className={classes.paragraph}>
                     Welcome and thank you for visiting my site! I'm a Ph.D candidate at
-                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"}>
+                    <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"} rel="noreferrer">
                         Interactive Data Group (IDG)
                     </a>
                     of State key Lab of Cad & CG, College of Computer Technology, Zhejiang University, supervised by
-                    <a className={classes.link} href={"https://person.zju.edu.cn/ycwu"} target={"_blank"}>
-                    Prof. Yingcai Wu. 
+                    <a className={classes.link} href={"https://person.zju.edu.cn/ycwu"} target={"_blank"} rel="noreferrer">
+                        Prof. Yingcai Wu.
                     </a>
-                    I received my Bachelor’s degree of Computer Science and Technology from Zhejiang
+                    I received my Bachelor's degree of Computer Science and Technology from Zhejiang
                     Sci-tech University.
                 </div>
                 <div className={classes.paragraph}>
@@ -104,14 +109,14 @@ const BasicView = () => {
                     to open the black box of AI and make it interpretable with Visualization.
                 </div>
                 <div className={classes.paragraph}>
-                    I have practiced in 
-                    <a className={classes.link} href={"https://www.zhejianglab.com/"} target={"_blank"}>
+                    I have practiced in
+                    <a className={classes.link} href={"https://www.zhejianglab.com/"} target={"_blank"} rel="noreferrer">
                         Zhejiang lab
                     </a>
                     , where the goal is to bridge the research with industry (2021/03
                     - now). I contributed as frontend software developer to participate in developing the big data
                     platform called
-                    <a className={classes.link} href={"https://nebula.zjvis.net"} target={"_blank"}>
+                    <a className={classes.link} href={"https://nebula.zjvis.net"} target={"_blank"} rel="noreferrer">
                         Nebula
                     </a>, in which I improve my coding skills. In my spare time, II enjoy taking exercise to strengthen
                     my body as well as to refresh my tied brain, especially playing basketball. Besides, watching

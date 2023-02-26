@@ -8,9 +8,15 @@ import {
     LinkOutlined,
     FundProjectionScreenOutlined
 } from "@ant-design/icons";
+import {BreakPoints} from "../utils/constants";
+
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     PublicationItem: {
+        [theme.breakpoints.down(tablet)]: {
+            height: 100
+        },
         height: 150,
         backgroundColor: "#f5f5f5",
         margin: "5px 0",
@@ -26,15 +32,23 @@ const useStyles = makeStyles(theme => createStyles({
         }
     },
     teaser: {
+        [theme.breakpoints.down(tablet)]: {
+            width: 120,
+        },
         width: 250
     },
     content: {
         marginLeft: 10,
         flex: 1,
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        overflow: "hidden"
     },
     title: {
+        [theme.breakpoints.down(tablet)]: {
+            fontSize: 12,
+            marginBottom: 7
+        },
         fontSize: 17,
         fontWeight: 600,
         marginBottom: 7
@@ -44,6 +58,9 @@ const useStyles = makeStyles(theme => createStyles({
         marginLeft: 5
     },
     author: {
+        [theme.breakpoints.down(tablet)]: {
+            display: "none"
+        },
         display: "flex",
         alignItems: "center",
         color: "#767676",
@@ -53,22 +70,34 @@ const useStyles = makeStyles(theme => createStyles({
         }
     },
     meAuthor: {
+        [theme.breakpoints.down(tablet)]: {
+            display: "none"
+        },
         fontWeight: 700,
         color: "#474747",
         fontSize: 15,
         textDecoration: "underline"
     },
     journal: {
+        [theme.breakpoints.down(tablet)]: {
+            marginTop: 0,
+        },
         marginTop: 10,
         color: "#767676",
         fontStyle: "italic"
     },
     detail: {
+        [theme.breakpoints.down(tablet)]: {
+            display: "none"
+        },
         marginTop: "auto",
         display: "flex",
         alignItems: "center",
     },
     link: {
+        [theme.breakpoints.down(tablet)]: {
+            display: "none"
+        },
         margin: "0 5px",
         color: "#86bdec",
 
@@ -77,6 +106,9 @@ const useStyles = makeStyles(theme => createStyles({
         }
     },
     year: {
+        [theme.breakpoints.down(tablet)]: {
+            display: "none"
+        },
         marginLeft: "auto",
         backgroundColor: "#000",
         color: "white",
@@ -109,7 +141,7 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
     }, [author])
 
     return <div className={classes.PublicationItem}>
-        <img className={classes.teaser} src={imgSrc}/>
+        <img className={classes.teaser} src={imgSrc} alt={""}/>
         <div className={classes.content}>
             <div className={classes.title}>
                 <span>{title}</span>
@@ -133,21 +165,22 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                     Paper:
                     <a className={classes.link}
                        href={pdf}
+                       rel="noreferrer"
                        target={"_blank"}><PaperClipOutlined/>PDF</a>
                 </div>
                 <div style={{margin: "0 5px"}}>|</div>
                 <div>
                     Material:
                     <a className={classes.link} href={video}
-                       target={"_blank"}><VideoCameraOutlined/>Video</a>,
+                       target={"_blank"} rel="noreferrer"><VideoCameraOutlined/>Video</a>,
                     <a className={classes.link} href={code}
-                       target={"_blank"}><CodeSandboxOutlined/>Code</a>,
+                       target={"_blank"} rel="noreferrer"><CodeSandboxOutlined/>Code</a>,
                     <a className={classes.link} href={website}
-                       target={"_blank"}><GlobalOutlined/>Website</a>,
+                       target={"_blank"} rel="noreferrer"><GlobalOutlined/>Website</a>,
                     <a className={classes.link} href={presentation}
-                       target={"_blank"}><FundProjectionScreenOutlined/>Presentation</a>
+                       target={"_blank"} rel="noreferrer"><FundProjectionScreenOutlined/>Presentation</a>
                     <a className={classes.link} href={cite}
-                       target={"_blank"}><LinkOutlined/>Cite</a>
+                       target={"_blank"} rel="noreferrer"><LinkOutlined/>Cite</a>
                 </div>
                 ]
             </div>

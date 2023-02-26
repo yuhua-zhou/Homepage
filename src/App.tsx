@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import Navigation from "./components/Navigation";
 import {createStyles, makeStyles} from "@material-ui/core";
@@ -13,6 +13,9 @@ import MileStoneView from "./views/MileStoneView";
 import Footer from "./components/Footer";
 import {findNearestInArray} from "./utils/utils";
 import {useDispatch} from "react-redux";
+import {BreakPoints} from "./utils/constants";
+
+const { desktop} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     App: {
@@ -32,8 +35,12 @@ const useStyles = makeStyles(theme => createStyles({
         alignItems: "center"
     },
     content: {
-        width: 1190 + 60,
-        padding: 30
+        [theme.breakpoints.up(desktop)]: {
+            width: 1190 + 60,
+            padding: 30
+        },
+        width: "100%",
+        padding: 15
     }
 }));
 

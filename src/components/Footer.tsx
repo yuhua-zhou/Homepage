@@ -1,4 +1,3 @@
-import {Component} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => createStyles({
@@ -17,7 +16,7 @@ const Footer = () => {
     const classes = useStyles();
 
     return <div className={classes.Footer}>
-        Copyright©2022. Last updated on Nov. 2022.
+        Copyright©2023. Last updated on March. 2023.
     </div>
 }
 

@@ -1,10 +1,15 @@
-import React, {useEffect, useRef, useState} from "react";
+import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
-import ResizeObserver from 'resize-observer-polyfill';
 import {Image} from 'antd';
+import {BreakPoints} from "../utils/constants";
+
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     AwardItem: {
+        [theme.breakpoints.down(tablet)]: {
+            fontSize: 13,
+        },
         display: "flex",
         alignItems: "center",
         fontWeight: 600,
@@ -13,7 +18,7 @@ const useStyles = makeStyles(theme => createStyles({
     },
     text: {
         margin: "0 10px",
-        textDecoration:"underline"
+        textDecoration: "underline"
     },
     icon: {
         width: 20,
@@ -33,11 +38,12 @@ const AwardItem: React.FC<AwardItemProps> = ({image, text, award}) => {
     return <div className={classes.AwardItem}>
 
         <img src={require("../assets/image/" + award + ".png").default}
-             className={classes.icon}/>
+             className={classes.icon}
+             alt={""}/>
 
         <div className={classes.text}>{text}</div>
 
-        <Image height={30}
+        <Image height={30} width={50}
                src={require("../assets/image/award/" + image).default}/>
     </div>
 }

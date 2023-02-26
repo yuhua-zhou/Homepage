@@ -5,6 +5,7 @@ import {Button} from "antd";
 import lifeList from "../assets/database/lifes.json";
 import LifeItem from "../components/LifeItem";
 import {getListKey} from "../utils/utils";
+import ExpandableLayout from "../components/ExpandableLayout";
 
 const useStyles = makeStyles(theme => createStyles({
     LifeView: {},
@@ -33,6 +34,18 @@ const LifeView = () => {
     }
     return <div id={"Life"} className={classes.LifeView}>
         <Title title={"My Life"} subTitle={"I enjoy my life in my spare time"}/>
+
+        {/*<ExpandableLayout rows={0} style={{*/}
+        {/*    marginTop: 20,*/}
+        {/*    background: "#f4f4f4",*/}
+        {/*    padding: 10,*/}
+        {/*    fontFamily: "microsoft雅黑",*/}
+        {/*}}>*/}
+        {/*    <div>213</div>*/}
+        {/*    <div>213</div>*/}
+        {/*    <div>123<br/>456</div>*/}
+        {/*</ExpandableLayout>*/}
+
         <div className={classes.content}
              style={{height: expand ? contentHeight : 270 + 20}}
         >
@@ -43,7 +56,8 @@ const LifeView = () => {
             })}
         </div>
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <Button className={classes.toggleBtn} onClick={onExpandToggle}>
+            <Button className={classes.toggleBtn}
+                    onClick={onExpandToggle}>
                 {expand ? "Collapse" : "Expand"}
             </Button>
         </div>

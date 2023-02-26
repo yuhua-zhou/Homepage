@@ -6,6 +6,9 @@ import mileStoneList from "../assets/database/milestonelist.json";
 import MileStoneItem from "../components/MileStoneItem";
 import MileStoneYearHeader from "../components/MileStoneYearHeader";
 import {getListKey} from "../utils/utils";
+import {BreakPoints} from "../utils/constants";
+
+const { tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     MileStoneView: {},
@@ -13,6 +16,9 @@ const useStyles = makeStyles(theme => createStyles({
         display: "flex",
     },
     mileStoneImg: {
+        [theme.breakpoints.down(tablet)]: {
+            display: "none"
+        },
         width: 200,
     },
     mileStoneList: {
