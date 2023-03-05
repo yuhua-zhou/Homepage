@@ -1,6 +1,7 @@
 import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import {BreakPoints} from "../utils/constants";
+import IconSet from "./IconSet";
 
 const {tablet} = BreakPoints;
 
@@ -10,7 +11,7 @@ const useStyles = makeStyles(theme => createStyles({
             paddingLeft: 0
         },
         display: "flex",
-        alignItems: "center",
+        alignContent: "center",
         fontFamily: "microsoft雅黑",
         fontSize: 15,
         paddingLeft: 20
@@ -22,11 +23,11 @@ const useStyles = makeStyles(theme => createStyles({
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        margin: "0 20px"
+        margin: "0 20px",
     },
     line: {
         width: 2,
-        height: 7,
+        flex: 1,
         background: "#f0f0f0",
     },
     circle: {
@@ -37,18 +38,27 @@ const useStyles = makeStyles(theme => createStyles({
         margin: "2px 0",
     },
     date: {
-        width: 85,
-        textAlign: "center"
+        [theme.breakpoints.down(tablet)]: {
+            width: 60,
+        },
+        width: 100,
+        textAlign: "center",
+        flexShrink: 0,
+        alignSelf: "center"
     },
-    issue: {}
+    issue: {
+        marginRight: 10,
+        padding: "5px 0"
+    }
 }));
 
 interface MileStoneItemProps {
     date: string,
-    issue: string
+    issue: string,
+    icon: string
 }
 
-const MileStoneItem: React.FC<MileStoneItemProps> = ({date, issue}) => {
+const MileStoneItem: React.FC<MileStoneItemProps> = ({date, issue, icon}) => {
     const classes = useStyles();
     return <div className={classes.MileStoneItem}>
         <div className={classes.date}>{date}</div>
@@ -58,6 +68,7 @@ const MileStoneItem: React.FC<MileStoneItemProps> = ({date, issue}) => {
             <div className={classes.line}/>
         </div>
         <div className={classes.issue}>{issue}</div>
+        <IconSet name={icon}/>
     </div>
 }
 

@@ -1,30 +1,37 @@
 [
   {
-    "date": "2022/10/31",
-    "issue": "One paper accepted by Journal of Visualization."
+    "date": "Oct. 31, 2022",
+    "issue": "One paper accepted by Journal of Visualization.",
+    "icon": "paper"
   },
   {
-    "date": "2022/07/23",
-    "issue": "Present my paper in ChinaVis2022 Xining, Qing Hai."
+    "date": "Jul. 23, 2022",
+    "issue": "Present my paper in ChinaVis2022 Xi'ning, Qing Hai.",
+    "icon": "presentation"
   },
   {
-    "date": "2022/06/20",
-    "issue": "One paper accepted by ChinaVis2022."
+    "date": "Jun. 20, 2022",
+    "issue": "One paper accepted by ChinaVis2022.",
+    "icon": "paper"
   },
   {
-    "date": "2021/10/27",
-    "issue": "Get my scholarship award of Software Engineer college (failed to compete the Nation scholarship)."
+    "date": "Oct. 27, 2021",
+    "issue": "Get my scholarship award of Software Engineer college (failed to compete the Nation scholarship).",
+    "icon": "honor"
   },
   {
-    "date": "2021/06/01",
-    "issue": "One co-authored paper accepted by VIS2021."
+    "date": "Jun. 20, 2021",
+    "issue": "One co-authored paper accepted by VIS2021.",
+    "icon": "paper"
   },
   {
-    "date": "2020/12/01",
-    "issue": "Finish the Basketball Data Collection System."
+    "date": "Dec. 01, 2020",
+    "issue": "Finish the Basketball Data Collection System.",
+    "icon": "activity"
   },
   {
-    "date": "2020/09/10",
-    "issue": "Begin my master degree life in Zhejiang University."
+    "date": "Sec. 10, 2020",
+    "issue": "Begin my master degree life in Zhejiang University.",
+    "icon": "study"
   }
 ]

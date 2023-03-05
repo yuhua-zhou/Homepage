@@ -15,7 +15,7 @@ import {findNearestInArray} from "./utils/utils";
 import {useDispatch} from "react-redux";
 import {BreakPoints} from "./utils/constants";
 
-const { desktop} = BreakPoints;
+const {desktop} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     App: {
@@ -49,10 +49,6 @@ const App = () => {
     const dispatch = useDispatch();
     const navigations = ["Basic", "Education", "Publications", "Awards", "MileStones", "Life", "Contact"];
 
-    useEffect(() => {
-        window.addEventListener("scroll", onScrollChange, true);
-    }, [])
-
     const scrollToAnchor = (anchorname: string) => {
         if (anchorname) {
             const anchorElement = document.getElementById(anchorname);
@@ -85,6 +81,11 @@ const App = () => {
         dispatch({type: "SetNavigateSelectedIndex", payload: index});
     }
 
+    useEffect(() => {
+        window.addEventListener("scroll", onScrollChange, true);
+    }, [])
+
+    // @ts-ignore
     return <div className={classes.App}>
         <Navigation
             onItemClick={scrollToAnchor}

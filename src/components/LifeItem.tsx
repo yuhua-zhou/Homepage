@@ -6,9 +6,10 @@ const useStyles = makeStyles(theme => createStyles({
         margin: 10,
         padding: 10,
         background: "white",
-        display: "inline-block",
+        display: "inline-flex",
+        flexDirection: "column",
         width: 272,
-        height: 250,
+        height: 260,
         borderRadius: 3,
 
         "&:hover > $imgContainer > $lifeImg": {
@@ -27,17 +28,32 @@ const useStyles = makeStyles(theme => createStyles({
         transition: "0.8s",
     },
     lifeText: {
-        marginTop: 10,
-        textAlign: "center"
+        marginTop: 5,
+        textAlign: "center",
+        flex: 1
     },
+    dashLine: {
+        height: 1,
+        backgroundImage: "linear-gradient(to right, #c7c7c7 35%, rgba(255,255,255,0) 0%)",
+        backgroundPosition: "bottom",
+        backgroundSize: "10px 1px",
+        backgroundRepeat: "repeat-x"
+    },
+    date: {
+        color: "#c7c7c7",
+        fontStyle: "italic",
+        fontSize: "0.7em",
+        textAlign: "right"
+    }
 }));
 
 interface LifeItemProps {
     snapshot: string
-    text: string
+    text: string,
+    date: string
 }
 
-const LifeItem: React.FC<LifeItemProps> = ({snapshot, text}) => {
+const LifeItem: React.FC<LifeItemProps> = ({snapshot, text, date}) => {
     const classes = useStyles();
     return <div className={classes.lifeItem}>
         <div className={classes.imgContainer}>
@@ -46,7 +62,12 @@ const LifeItem: React.FC<LifeItemProps> = ({snapshot, text}) => {
                  src={require("../assets/image/life/" + snapshot).default}/>
         </div>
         <div className={classes.lifeText}>{text}</div>
+        {/*<div>*/}
+        {/*    <div className={classes.dashLine}/>*/}
+        {/*</div>*/}
+        <div className={classes.date}>{date}</div>
     </div>
+
 }
 
 export default LifeItem;

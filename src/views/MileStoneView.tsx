@@ -36,7 +36,7 @@ const MileStoneView = () => {
 
         mileStoneList.forEach((item) => {
             const {date} = item;
-            const [year,] = date.split("/");
+            const [,year] = date.split(",");
             if (!years.includes(year)) {
                 years.push(year);
                 myMileStones[year] = [];

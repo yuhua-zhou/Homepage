@@ -34,9 +34,9 @@ const useStyles = makeStyles(theme => createStyles({
     },
     arrow: {
         [theme.breakpoints.down(tablet)]: {
-            width: 92,
+            width: 70,
         },
-        width: 104,
+        width: 119,
         height: 2,
         background: "#f0f0f0"
     },

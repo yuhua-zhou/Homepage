@@ -55,7 +55,6 @@ const useStyles = makeStyles(theme => createStyles({
     },
     line: {
         [theme.breakpoints.down(tablet)]: {
-            height: 100,
             width: 3
         },
         flex: 1,

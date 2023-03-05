@@ -2,6 +2,7 @@ import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import {Image} from 'antd';
 import {BreakPoints} from "../utils/constants";
+import IconSet from "./IconSet";
 
 const {tablet} = BreakPoints;
 
@@ -37,9 +38,7 @@ const AwardItem: React.FC<AwardItemProps> = ({image, text, award}) => {
 
     return <div className={classes.AwardItem}>
 
-        <img src={require("../assets/image/" + award + ".png").default}
-             className={classes.icon}
-             alt={""}/>
+        <IconSet name={award}/>
 
         <div className={classes.text}>{text}</div>
 
