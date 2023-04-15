@@ -5,6 +5,16 @@
     "award": "honor"
   },
   {
+    "image": "honorGraduate.png",
+    "text": "Award of honor for graduate of Zhejiang University（2021）",
+    "award": "honor"
+  },
+  {
+    "image": "meritGraduate.png",
+    "text": "Graduate of Merit/Triple A graduate of Zhejiang University (2021)",
+    "award": "honor"
+  },
+  {
     "image": "outstanding_graduate .jpg",
     "text": "Outstanding graduate student of Zhejiang Province (2020)",
     "award": "honor"

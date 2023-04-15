@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import {findNearestInArray} from "./utils/utils";
 import {useDispatch} from "react-redux";
 import {BreakPoints} from "./utils/constants";
+import InternshipView from "./views/InternshipView";
 
 const {desktop} = BreakPoints;
 
@@ -47,7 +48,7 @@ const useStyles = makeStyles(theme => createStyles({
 const App = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const navigations = ["Basic", "Education", "Publications", "Awards", "MileStones", "Life", "Contact"];
+    const navigations = ["Basic", "MileStones", "Publications", "Internship", "Awards", "Education", "Life", "Contact"];
 
     const scrollToAnchor = (anchorname: string) => {
         if (anchorname) {
@@ -95,13 +96,15 @@ const App = () => {
             <div className={classes.content}>
                 <BasicView/>
                 <Divider/>
-                <EducationView/>
+                <MileStoneView/>
                 <Divider/>
                 <PublicationView/>
                 <Divider/>
+                <InternshipView/>
+                <Divider/>
                 <AwardView/>
                 <Divider/>
-                <MileStoneView/>
+                <EducationView/>
                 <Divider/>
                 <LifeView/>
                 <Divider/>

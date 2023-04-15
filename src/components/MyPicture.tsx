@@ -5,7 +5,7 @@ import myPicture from "../assets/image/myPicture.png";
 import myPicture2 from "../assets/image/myPicture2.jpg";
 import {BreakPoints} from "../utils/constants";
 
-const {laptop, tablet} = BreakPoints;
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     myPicture: {
@@ -24,9 +24,6 @@ const useStyles = makeStyles(theme => createStyles({
         marginBottom: 15,
         "&:hover": {
             animation: "swing 2s"
-        },
-        [theme.breakpoints.up(laptop)]: {
-            marginTop: 100,
         },
     },
     switchBar: {

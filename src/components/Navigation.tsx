@@ -69,7 +69,7 @@ const useStyles = makeStyles(theme => createStyles({
 
         // horizontal
         [theme.breakpoints.up(laptop)]: {
-            padding: "0 25px",
+            padding: "0 15px",
             margin: "0 3px",
             cursor: "pointer",
             lineHeight: "53px",
@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => createStyles({
 
         // horizontal
         [theme.breakpoints.up(laptop)]: {
-            padding: "0 25px",
+            padding: "0 15px",
             margin: "0 3px",
             cursor: "pointer",
             backgroundColor: "#6baed6",

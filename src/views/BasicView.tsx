@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => createStyles({
             flexDirection: "column"
         },
         display: "flex",
+        alignItems: "center"
     },
     content: {
         [theme.breakpoints.down(laptop)]: {
@@ -82,18 +83,22 @@ const BasicView = () => {
                     <Tag icon={<LinkedinOutlined/>} color="#55acee">Basketball</Tag>
                 </div>
 
+                {/*basic*/}
                 <div className={classes.paragraph}>
                     Welcome and thank you for visiting my site! I'm a Ph.D candidate at
                     <a className={classes.link} href={"https://zjuidg.org"} target={"_blank"} rel="noreferrer">
                         Interactive Data Group (IDG)
                     </a>
                     of State key Lab of Cad & CG, College of Computer Technology, Zhejiang University, supervised by
-                    <a className={classes.link} href={"https://person.zju.edu.cn/ycwu"} target={"_blank"} rel="noreferrer">
+                    <a className={classes.link} href={"https://person.zju.edu.cn/ycwu"} target={"_blank"}
+                       rel="noreferrer">
                         Prof. Yingcai Wu.
                     </a>
                     I received my Bachelor's degree of Computer Science and Technology from Zhejiang
                     Sci-tech University.
                 </div>
+
+                {/*master*/}
                 <div className={classes.paragraph}>
                     I am enthusiastic about mapping into the main learning tasks in Artificial Intelligence (AI) to
                     bridge the needs in visualization with the capabilities of AI.
@@ -108,20 +113,10 @@ const BasicView = () => {
                     data insights to the masses. My another research interest lies in Explainable AI (XAI), which aims
                     to open the black box of AI and make it interpretable with Visualization.
                 </div>
+
+                {/*doctoral*/}
                 <div className={classes.paragraph}>
-                    I have practiced in
-                    <a className={classes.link} href={"https://www.zhejianglab.com/"} target={"_blank"} rel="noreferrer">
-                        Zhejiang lab
-                    </a>
-                    , where the goal is to bridge the research with industry (2021/03
-                    - now). I contributed as frontend software developer to participate in developing the big data
-                    platform called
-                    <a className={classes.link} href={"https://nebula.zjvis.net"} target={"_blank"} rel="noreferrer">
-                        Nebula
-                    </a>, in which I improve my coding skills. In my spare time, II enjoy taking exercise to strengthen
-                    my body as well as to refresh my tied brain, especially playing basketball. Besides, watching
-                    movies, playing computer games, and enjoy tasted food are also fulfilling my life. I believe the
-                    attitude of work and life balance can be helpful for my research career.
+
                 </div>
             </div>
         </div>

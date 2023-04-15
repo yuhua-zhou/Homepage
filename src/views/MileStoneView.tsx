@@ -8,7 +8,7 @@ import MileStoneYearHeader from "../components/MileStoneYearHeader";
 import {getListKey} from "../utils/utils";
 import {BreakPoints} from "../utils/constants";
 
-const { tablet} = BreakPoints;
+const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     MileStoneView: {},
@@ -36,7 +36,7 @@ const MileStoneView = () => {
 
         mileStoneList.forEach((item) => {
             const {date} = item;
-            const [,year] = date.split(",");
+            const [, year] = date.split(",");
             if (!years.includes(year)) {
                 years.push(year);
                 myMileStones[year] = [];
@@ -53,7 +53,7 @@ const MileStoneView = () => {
             <div className={classes.mileStoneList}>
                 {years.map((year) => {
                     return <div key={getListKey(year)}>
-                        <MileStoneYearHeader year={year}/>
+                        {/*<MileStoneYearHeader year={year}/>*/}
                         {myMileStones[year].map((item: any) => {
                             return <MileStoneItem key={getListKey(item)} {...item}/>
                         })}
@@ -61,7 +61,7 @@ const MileStoneView = () => {
                 })}
             </div>
             <div>
-                <img src={mileStoneImg} className={classes.mileStoneImg}/>
+                <img src={mileStoneImg} className={classes.mileStoneImg} alt={""}/>
             </div>
         </div>
     </div>
