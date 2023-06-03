@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useMemo, useRef} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => createStyles({
@@ -19,11 +19,12 @@ const useStyles = makeStyles(theme => createStyles({
     },
     imgContainer: {
         width: "100%",
-        height: 170,
+        height: 180,
         overflow: "hidden",
+        textAlign: "center"
     },
     lifeImg: {
-        width: "100%",
+        maxWidth: "100%",
         height: "100%",
         transition: "0.8s",
     },
@@ -55,11 +56,18 @@ interface LifeItemProps {
 
 const LifeItem: React.FC<LifeItemProps> = ({snapshot, text, date}) => {
     const classes = useStyles();
+    const imgRef = useRef(null);
+
+    const imgSrc = useMemo(() => {
+        return require("../assets/image/life/" + snapshot).default;
+    }, [snapshot]);
+
     return <div className={classes.lifeItem}>
         <div className={classes.imgContainer}>
             <img className={classes.lifeImg}
+                 ref={imgRef}
                  alt={""}
-                 src={require("../assets/image/life/" + snapshot).default}/>
+                 src={imgSrc}/>
         </div>
         <div className={classes.lifeText}>{text}</div>
         {/*<div>*/}

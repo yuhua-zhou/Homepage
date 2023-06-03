@@ -15,7 +15,7 @@ const Footer = () => {
     const classes = useStyles();
 
     return <div className={classes.Footer}>
-        Copyright©2023. Last updated on Apr. 2023.
+        Copyright©2023. Last updated on Jun. 2023.
     </div>
 }
 

@@ -9,7 +9,10 @@ import {BreakPoints} from "../utils/constants";
 const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
-    EducationView: {},
+    EducationView: {
+        width: "100%",
+        overflow: "auto"
+    },
     content: {
         [theme.breakpoints.up(tablet)]: {
             display: "flex"

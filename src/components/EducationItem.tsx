@@ -98,11 +98,14 @@ const useStyles = makeStyles(theme => createStyles({
         fontWeight: 600,
         fontSize: 15
     },
+    major: {
+        margin: "3px 0",
+        fontStyle: "italic"
+    },
     description: {
         [theme.breakpoints.down(tablet)]: {
             display: "none"
         },
-        marginTop: 5,
         fontSize: 12,
     }
 }));
@@ -111,10 +114,11 @@ interface EducationItemProps {
     dateTime: string,
     schoolName: string,
     schoolLogo: string,
+    major: string,
     description: string
 }
 
-const EducationItem: React.FC<EducationItemProps> = ({dateTime, schoolLogo, schoolName, description}) => {
+const EducationItem: React.FC<EducationItemProps> = ({dateTime, schoolLogo, schoolName, major, description}) => {
     const classes = useStyles();
     const logo = require("../assets/image/" + schoolLogo + ".png").default;
 
@@ -134,6 +138,7 @@ const EducationItem: React.FC<EducationItemProps> = ({dateTime, schoolLogo, scho
                 <img src={logo} className={classes.schoolLogo} alt={""}/>
                 <div style={{marginLeft: 10}}>
                     <div className={classes.schoolName}>{schoolName}</div>
+                    <div className={classes.major}>{major}</div>
                     <div className={classes.description}>{description}</div>
                 </div>
             </div>
@@ -154,7 +159,7 @@ const EducationItem: React.FC<EducationItemProps> = ({dateTime, schoolLogo, scho
                     <img src={logo} className={classes.schoolLogo} alt={""}/>
                     <div style={{marginLeft: 10}}>
                         <div className={classes.schoolName}>{schoolName}</div>
-                        <div className={classes.description}>{description}</div>
+                        <div className={classes.major}>{major}</div>
                     </div>
                 </div>
             </div>

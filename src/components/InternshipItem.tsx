@@ -41,7 +41,7 @@ const InternshiItem = () => {
         </a>
         <div className={classes.content}>
             I have practiced in Zhejiang lab, where the goal is to bridge the research with industry.
-            I contributed as frontend software developer to participate in developing the big data
+            I contributed as frontend developer in the JianWei Group to participate in developing the big data
             platform called
             <a className={classes.link} href={"https://nebula.zjvis.net"} target={"_blank"} rel="noreferrer">
                 Nebula

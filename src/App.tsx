@@ -31,6 +31,7 @@ const useStyles = makeStyles(theme => createStyles({
         width: "100%",
         flex: 1,
         overflowY: "scroll",
+        overflowX: "hidden",
         display: "flex",
         flexDirection: "column",
         alignItems: "center"
