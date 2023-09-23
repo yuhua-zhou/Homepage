@@ -2,19 +2,18 @@ import React from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
 import MyPicture from "../components/MyPicture";
-import {Tag} from 'antd';
+import {Divider, Tag} from 'antd';
 import {
-    FacebookOutlined,
-    LinkedinOutlined,
-    TwitterOutlined,
-    YoutubeOutlined,
+    GithubOutlined,
+    ZhihuOutlined,
+    GoogleOutlined,
 } from '@ant-design/icons';
 import {BreakPoints} from "../utils/constants";
 
 const {laptop, tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
-    BasicView: {},
+    BiographyView: {},
     body: {
         [theme.breakpoints.down(laptop)]: {
             flexDirection: "column"
@@ -45,13 +44,15 @@ const useStyles = makeStyles(theme => createStyles({
         borderBottom: "3px solid red"
     },
     tags: {
-        marginBottom: 15
+        marginBottom: 15,
+        "& > *": {
+            cursor: 'pointer'
+        }
     },
     paragraph: {
-        fontFamily: "Montserrat",
-        fontSize: 15,
-        marginBottom: 15,
-        lineHeight: "27px",
+        fontSize: "1.2em",
+        marginBottom: 10,
+        lineHeight: 1.5,
     },
     link: {
         color: "#7daed3",
@@ -64,10 +65,28 @@ const useStyles = makeStyles(theme => createStyles({
     }
 }));
 
-const BasicView = () => {
+const BiographyView = () => {
     const classes = useStyles();
-    return <div id={"Basic"} className={classes.BasicView}>
-        <Title title={"Basic Info"} subTitle={"about me"}/>
+
+    // my media
+    const medias = [
+        {name: "Github", icon: <GithubOutlined/>, color: "#474b56", link: "https://github.com/Zyh533"},
+        {
+            name: "Google Scholar",
+            icon: <GoogleOutlined/>,
+            color: "#ea4436",
+            link: "https://scholar.google.com/citations?user=dzOBRToAAAAJ&hl=zh-CN"
+        },
+        {name: "Zhihu", icon: <ZhihuOutlined/>, color: "#55acee", link: "https://www.zhihu.com/people/mo-ye-34-29"},
+    ];
+
+    // click media go to the website
+    const onMediaClick = (link: string) => {
+        window.open(link);
+    }
+
+    return <div id={"Biography"} className={classes.BiographyView}>
+        <Title title={"Biography"} subTitle={"about me"}/>
         <div className={classes.body}>
 
             <MyPicture/>
@@ -77,10 +96,10 @@ const BasicView = () => {
                     Hi, I am <div className={classes.nameUnderline}>Yuhua Zhou</div> (周煜华)
                 </div>
                 <div className={classes.tags}>
-                    <Tag icon={<TwitterOutlined/>} color="#55acee">Sing</Tag>
-                    <Tag icon={<YoutubeOutlined/>} color="#cd201f">Dance</Tag>
-                    <Tag icon={<FacebookOutlined/>} color="#3b5999">Rap</Tag>
-                    <Tag icon={<LinkedinOutlined/>} color="#55acee">Basketball</Tag>
+                    {medias.map((item) => {
+                        const {name, color, icon, link} = item;
+                        return <Tag icon={icon} color={color} onClick={() => onMediaClick(link)}>{name}</Tag>
+                    })}
                 </div>
 
                 {/*basic*/}
@@ -120,7 +139,9 @@ const BasicView = () => {
                 </div>
             </div>
         </div>
+
+        <Divider/>
     </div>
 }
 
-export default BasicView;
+export default BiographyView;

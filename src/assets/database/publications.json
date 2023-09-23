@@ -5,6 +5,7 @@
     "award": "Honorable Mention",
     "author": "Yuhua Zhou, Xiyu Meng, Yanhong Wu, Tan Tang, Yingcai Wu",
     "me": 0,
+    "publicationType": "Conference",
     "journal": "ChinaVis2022",
     "year": "2022",
     "categories": [
@@ -14,11 +15,10 @@
     ],
     "links": {
       "pdf": "https://link.springer.com/article/10.1007/s12650-022-00894-z",
-      "video": "https://link.springer.com/article/10.1007/s12650-022-00894-z",
-      "code": "https://link.springer.com/article/10.1007/s12650-022-00894-z",
-      "website": "https://link.springer.com/article/10.1007/s12650-022-00894-z",
-      "presentation": "https://link.springer.com/article/10.1007/s12650-022-00894-z",
-      "cite": "https://link.springer.com/article/10.1007/s12650-022-00894-z"
+      "video": "",
+      "code": "",
+      "website": "https://visualinsights.github.io/VisualInsight-ChartDataset/",
+      "presentation": ""
     }
   },
   {
@@ -27,6 +27,7 @@
     "award": "",
     "author": "Junxiu Tang, Yuhua Zhou, Tan Tang, Di Weng, Boyang Xie, Lingyun Yu, Huaqiang Zhang, and Yingcai Wu",
     "me": 1,
+    "publicationType": "Journal",
     "journal": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2021)",
     "year": "2021",
     "categories": [
@@ -34,11 +35,10 @@
     ],
     "links": {
       "pdf": "https://ieeexplore.ieee.org/document/9557224",
-      "video": "https://ieeexplore.ieee.org/document/9557224",
-      "code": "https://ieeexplore.ieee.org/document/9557224",
-      "website": "https://ieeexplore.ieee.org/document/9557224",
-      "presentation": "https://ieeexplore.ieee.org/document/9557224",
-      "cite": "https://ieeexplore.ieee.org/document/9557224"
+      "video": "",
+      "code": "",
+      "website": "",
+      "presentation": ""
     }
   },
   {
@@ -47,6 +47,7 @@
     "award": "",
     "author": "Junxiu Tang, Lingyun Yu, Tan Tang, Xinhuan Shu, Lu Ying, Yuhua Zhou, Peiran Ren, and Yingcai Wu",
     "me": 5,
+    "publicationType": "Journal",
     "journal": "IEEE VIS 2020 Short Papers",
     "year": "2020",
     "categories": [
@@ -54,11 +55,10 @@
     ],
     "links": {
       "pdf": "https://ieeexplore.ieee.org/document/9331289",
-      "video": "https://ieeexplore.ieee.org/document/9331289",
-      "code": "https://ieeexplore.ieee.org/document/9331289",
-      "website": "https://ieeexplore.ieee.org/document/9331289",
-      "presentation": "https://ieeexplore.ieee.org/document/9331289",
-      "cite": "https://ieeexplore.ieee.org/document/9331289"
+      "video": "",
+      "code": "",
+      "website": "",
+      "presentation": ""
     }
   }
 ]

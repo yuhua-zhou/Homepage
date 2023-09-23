@@ -4,9 +4,11 @@ import Title from "../components/Title";
 import awardCupImg from "../assets/image/award_cup.png"
 import AwardItem from "../components/AwardItem";
 
-import awardList from "../assets/database/awards.json";
 import {getListKey} from "../utils/utils";
 import {BreakPoints} from "../utils/constants";
+import {useGlobalState} from "../store/useData";
+import {Divider} from "antd";
+import ExpandableLayout from "../components/ExpandableLayout";
 
 const {tablet} = BreakPoints;
 
@@ -39,17 +41,25 @@ const useStyles = makeStyles(theme => createStyles({
 
 const AwardView = () => {
     const classes = useStyles();
-
+    const {awardList} = useGlobalState();
     return <div id={"Awards"} className={classes.AwardView}>
         <Title title={"Award"} subTitle={"my honors & awards & certifications"}/>
         <div className={classes.controlBar}>
             <img src={awardCupImg} className={classes.awardCup} alt={""}/>
         </div>
+
+        {/*<ExpandableLayout rows={5}>*/}
+        {/*    {awardList.map((item) => {*/}
+        {/*        return <AwardItem key={getListKey(item)} {...item}/>;*/}
+        {/*    })}*/}
+        {/*</ExpandableLayout>*/}
+
         <div className={classes.awardList}>
             {awardList.map((item) => {
                 return <AwardItem key={getListKey(item)} {...item}/>;
             })}
         </div>
+        <Divider/>
     </div>
 }
 

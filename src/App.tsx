@@ -1,18 +1,15 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.css';
 import Navigation from "./components/Navigation";
 import {createStyles, makeStyles} from "@material-ui/core";
-import BasicView from "./views/BasicView";
+import BiographyView from "./views/BiographyView";
 import EducationView from "./views/EducationView";
 import PublicationView from "./views/PublicationView";
 import AwardView from "./views/AwardView";
 import LifeView from "./views/LifeView";
 import ContactView from "./views/ContactView";
-import {Divider} from "antd";
 import MileStoneView from "./views/MileStoneView";
 import Footer from "./components/Footer";
-import {findNearestInArray} from "./utils/utils";
-import {useDispatch} from "react-redux";
 import {BreakPoints} from "./utils/constants";
 import InternshipView from "./views/InternshipView";
 
@@ -25,7 +22,8 @@ const useStyles = makeStyles(theme => createStyles({
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
+        fontFamily: "Arial",
     },
     body: {
         width: "100%",
@@ -48,67 +46,20 @@ const useStyles = makeStyles(theme => createStyles({
 
 const App = () => {
     const classes = useStyles();
-    const dispatch = useDispatch();
-    const navigations = ["Basic", "MileStones", "Publications", "Internship", "Awards", "Education", "Life", "Contact"];
+    const navigations = ["Biography", "MileStones", "Publications", "Internship", "Awards", "Education", "Life", "Contact"];
 
-    const scrollToAnchor = (anchorname: string) => {
-        if (anchorname) {
-            const anchorElement = document.getElementById(anchorname);
-            if (anchorElement) {
-                // remove the listener
-                window.removeEventListener("scroll", onScrollChange, true);
-                // scroll to view
-                anchorElement.scrollIntoView({behavior: "smooth", block: "start"});
-
-                // after 1s, add listener
-                setTimeout(() => {
-                    window.addEventListener("scroll", onScrollChange, true);
-                }, 1000)
-            }
-        }
-    }
-
-    const onScrollChange = (event: any) => {
-        const {scrollTop} = event.target;
-
-        const offsets: number[] = navigations.map((name) => {
-            const element = document.getElementById(name);
-            if (element) {
-                return element.offsetTop;
-            }
-            return 0;
-        })
-
-        const index = findNearestInArray(offsets, scrollTop);
-        dispatch({type: "SetNavigateSelectedIndex", payload: index});
-    }
-
-    useEffect(() => {
-        window.addEventListener("scroll", onScrollChange, true);
-    }, [])
-
-    // @ts-ignore
     return <div className={classes.App}>
-        <Navigation
-            onItemClick={scrollToAnchor}
-            navigations={navigations}/>
+        <Navigation navigations={navigations}/>
 
         <div className={classes.body}>
             <div className={classes.content}>
-                <BasicView/>
-                <Divider/>
+                <BiographyView/>
                 <MileStoneView/>
-                <Divider/>
                 <PublicationView/>
-                <Divider/>
                 <InternshipView/>
-                <Divider/>
                 <AwardView/>
-                <Divider/>
                 <EducationView/>
-                <Divider/>
                 <LifeView/>
-                <Divider/>
                 <ContactView/>
             </div>
             <Footer/>

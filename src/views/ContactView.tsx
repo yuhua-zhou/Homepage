@@ -14,9 +14,7 @@ import {BreakPoints} from "../utils/constants";
 const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
-    ContactView: {
-        fontFamily: "microsoft雅黑"
-    },
+    ContactView: {},
     content: {
         [theme.breakpoints.down(tablet)]: {
             flexDirection: "column"

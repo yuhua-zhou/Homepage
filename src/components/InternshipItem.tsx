@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useMemo} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
-import zjlabImg from "../assets/image/zjlab.png";
 
 const useStyles = makeStyles(theme => createStyles({
     InternshipItem: {
@@ -21,6 +20,12 @@ const useStyles = makeStyles(theme => createStyles({
     content: {
         marginLeft: 30
     },
+    horizontalBar: {
+        width: 20,
+        height: 2,
+        background: "#000",
+        margin: "0 15px"
+    },
     link: {
         color: "#7daed3",
         textDecoration: "underline",
@@ -32,25 +37,54 @@ const useStyles = makeStyles(theme => createStyles({
     }
 }));
 
-const InternshiItem = () => {
+interface InternshipItemProps {
+    companyName: string
+    date: string
+    companyLogo: string
+    companyHref: string
+    groupName: string
+    content: any[]
+}
+
+const InternshipItem: React.FC<InternshipItemProps> = ({
+                                                           companyName,
+                                                           date,
+                                                           companyLogo,
+                                                           companyHref,
+                                                           groupName,
+                                                           content
+                                                       }) => {
     const classes = useStyles();
+
+    const imgSrc = useMemo(() => {
+        return require("../assets/image/internship/" + companyLogo);
+    }, [companyLogo]);
+
     return <div className={classes.InternshipItem}>
-        <a className={classes.company} href={"https://www.zhejianglab.com/"} target={"_blank"} rel="noreferrer">
-            <img className={classes.companyLogo} src={zjlabImg} alt={""}/>
-            ZheJiang Lab (2021/03 - Now)
+        <a className={classes.company} href={companyHref} target={"_blank"} rel="noreferrer">
+            <img className={classes.companyLogo} src={imgSrc} alt={""}/>
+            <div>{companyName} ({date})</div>
+            <div className={classes.horizontalBar}/>
+            <div>{groupName}</div>
         </a>
         <div className={classes.content}>
-            I have practiced in Zhejiang lab, where the goal is to bridge the research with industry.
-            I contributed as frontend developer in the JianWei Group to participate in developing the big data
-            platform called
-            <a className={classes.link} href={"https://nebula.zjvis.net"} target={"_blank"} rel="noreferrer">
-                Nebula
-            </a>
-            and the manage system named Devops,
-            in which I improve my coding skills.
+            {content.map((item) => {
+                const {type, content, href} = item;
+                if (type === "link") {
+                    return <a className={classes.link} href={href} target={"_blank"}
+                              key={href}
+                              rel="noreferrer">
+                        {content}
+                    </a>
+                } else if (type === "text") {
+                    return <span key={content}>
+                        {content}
+                    </span>
+                }
+            })}
         </div>
 
     </div>
 }
 
-export default InternshiItem;
+export default InternshipItem;

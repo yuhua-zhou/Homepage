@@ -1,0 +1,24 @@
+[
+  {
+    "companyName": "ZheJiang Lab",
+    "date": "2021/03 - Now",
+    "companyLogo": "zjlab.png",
+    "companyHref": "https://www.zhejianglab.com/",
+    "groupName": "Jian Wei Group",
+    "content": [
+      {
+        "type": "text",
+        "content": "I have practiced in Zhejiang lab, where the goal is to bridge the research with industry. I contributed as frontend developer to participate in developing the big data platform called"
+      },
+      {
+        "type": "link",
+        "content": "Nebula",
+        "href": "https://nebula.zjvis.net"
+      },
+      {
+        "type": "text",
+        "content": "and the manage system named Devops, in which I improve my coding skills."
+      }
+    ]
+  }
+]

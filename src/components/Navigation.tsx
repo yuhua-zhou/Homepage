@@ -1,12 +1,11 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import {RightOutlined, EyeOutlined, MenuOutlined} from "@ant-design/icons";
 import logo from "../assets/image/logo.png";
-import {useGlobalState} from "../store/useData";
-import {useDispatch} from "react-redux";
 import {Popover} from "antd";
 
 import {BreakPoints} from "../utils/constants";
+import {findNearestInArray} from "../utils/utils";
 
 const {laptop} = BreakPoints;
 
@@ -15,7 +14,6 @@ const useStyles = makeStyles(theme => createStyles({
         width: '100%',
         fontWeight: 700,
         fontSize: 14,
-        fontFamily: "'Helvetica', sans-serif"
     },
     Navigation: {
         width: '100%',
@@ -126,24 +124,23 @@ const useStyles = makeStyles(theme => createStyles({
 
 interface NavigationProps {
     navigations: string[],
-    onItemClick: (anchorname: string) => void,
 }
 
-const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
+const Navigation: React.FC<NavigationProps> = ({navigations}) => {
     const classes = useStyles();
-    const dispatch = useDispatch();
-    const {navigateSelectedIndex} = useGlobalState();
     const currentNode = useRef(null);
 
     const [visitCount, setVisitCount] = useState(0);
-    const [collapse, setCollapse] = useState(true);
+    const [collapse, setCollapse] = useState(true); //
+    const [selectedIndex, setSelectedIndex] = useState(0); // selected index
 
     // on menu item click
     const onMenuItemClick = (i: number) => {
-        dispatch({type: "SetNavigateSelectedIndex", payload: i});
-        onItemClick(navigations[i]);
+        setSelectedIndex(i);
+        scrollToAnchor(navigations[i]);
     }
 
+    // goto my blog
     const goToBlog = () => {
         // window.open("https://zyh533.github.io/SizerBlog/#/index/home")
         window.open("https://github.com/Zyh533")
@@ -157,6 +154,55 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
             Visited Counts: <span>{visitCount}</span>
         </div>
     }
+
+    // menu component
+    const MenuComponent = () => {
+        return navigations.map((item, i) => {
+            return <div className={i === selectedIndex ? classes.itemSelected : classes.item}
+                        key={item}
+                        onClick={() => onMenuItemClick(i)}>
+                {item}
+            </div>
+        })
+    }
+
+    // scroll to target anchor
+    const scrollToAnchor = (anchorname: string) => {
+        if (anchorname) {
+            const anchorElement = document.getElementById(anchorname);
+            if (anchorElement) {
+                // remove the listener
+                // window.removeEventListener("scroll", onScrollChange, true);
+
+                // scroll to view
+                anchorElement.scrollIntoView({behavior: "smooth", block: "start"});
+
+                // after 1s, add listener
+                // setTimeout(() => {
+                //     window.addEventListener("scroll", onScrollChange, true);
+                // }, 1000)
+            }
+        }
+    }
+
+    // scroll change
+    const onScrollChange = useCallback((event: any) => {
+        const {scrollTop} = event.target;
+        const offsets: number[] = navigations.map((name) => {
+            const element = document.getElementById(name);
+            if (element) {
+                return element.offsetTop;
+            }
+            return 0;
+        })
+
+        const index = findNearestInArray(offsets, scrollTop);
+        setSelectedIndex(index)
+    }, [navigations])
+
+    useEffect(() => {
+        window.addEventListener("scroll", onScrollChange, true);
+    }, [onScrollChange])
 
     useEffect(() => {
         // get visit count
@@ -172,17 +218,6 @@ const Navigation: React.FC<NavigationProps> = ({navigations, onItemClick}) => {
         })
 
     }, [])
-
-    // menu component
-    const MenuComponent = () => {
-        return navigations.map((item, i) => {
-            return <div className={i === navigateSelectedIndex ? classes.itemSelected : classes.item}
-                        key={item}
-                        onClick={() => onMenuItemClick(i)}>
-                {item}
-            </div>
-        })
-    }
 
     return <div className={classes.Container}>
         <div className={classes.Navigation} ref={currentNode}>

@@ -6,7 +6,6 @@ const {tablet} = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     EducationItem: {
-        fontFamily: "Microsoft雅黑",
         flex: 1,
         "&:hover > $desktop > $detailBox": {
             border: "3px solid #7daed3",
@@ -120,7 +119,7 @@ interface EducationItemProps {
 
 const EducationItem: React.FC<EducationItemProps> = ({dateTime, schoolLogo, schoolName, major, description}) => {
     const classes = useStyles();
-    const logo = require("../assets/image/" + schoolLogo + ".png").default;
+    const logo = require("../assets/image/" + schoolLogo + ".png");
 
     return <div className={classes.EducationItem}>
         {/*desktop version*/}

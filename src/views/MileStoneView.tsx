@@ -2,11 +2,12 @@ import React, {useMemo} from "react";
 import Title from "../components/Title";
 import {createStyles, makeStyles} from "@material-ui/core";
 import mileStoneImg from "../assets/image/milestone.png";
-import mileStoneList from "../assets/database/milestonelist.json";
 import MileStoneItem from "../components/MileStoneItem";
 import MileStoneYearHeader from "../components/MileStoneYearHeader";
 import {getListKey} from "../utils/utils";
 import {BreakPoints} from "../utils/constants";
+import {useGlobalState} from "../store/useData";
+import {Divider} from "antd";
 
 const {tablet} = BreakPoints;
 
@@ -29,7 +30,7 @@ const useStyles = makeStyles(theme => createStyles({
 
 const MileStoneView = () => {
     const classes = useStyles();
-
+    const {mileStoneList} = useGlobalState();
     const {years, myMileStones} = useMemo(() => {
         const years: string[] = [];
         const myMileStones: any = {};
@@ -64,6 +65,7 @@ const MileStoneView = () => {
                 <img src={mileStoneImg} className={classes.mileStoneImg} alt={""}/>
             </div>
         </div>
+        <Divider/>
     </div>
 }
 

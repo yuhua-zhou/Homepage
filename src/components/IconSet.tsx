@@ -18,7 +18,7 @@ const IconSet: React.FC<IProps> = ({name}) => {
     const classes = useStyles();
 
     return <div className={classes.IconSet}>
-        <img src={require("../assets/image/iconset/" + name + ".png").default}
+        <img src={require("../assets/image/iconset/" + name + ".png")}
              className={classes.icon}
              alt={name}/>
     </div>

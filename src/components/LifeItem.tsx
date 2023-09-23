@@ -59,7 +59,7 @@ const LifeItem: React.FC<LifeItemProps> = ({snapshot, text, date}) => {
     const imgRef = useRef(null);
 
     const imgSrc = useMemo(() => {
-        return require("../assets/image/life/" + snapshot).default;
+        return require("../assets/image/life/" + snapshot);
     }, [snapshot]);
 
     return <div className={classes.lifeItem}>

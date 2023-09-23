@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => createStyles({
         display: "flex",
         alignItems: "center",
         padding: "3px 0",
-        fontFamily: "Microsoft YaHei",
         marginBottom: 20
     },
     prefix: {

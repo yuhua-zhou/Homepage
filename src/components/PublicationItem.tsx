@@ -5,10 +5,10 @@ import {
     CodeSandboxOutlined,
     VideoCameraOutlined,
     GlobalOutlined,
-    LinkOutlined,
     FundProjectionScreenOutlined
 } from "@ant-design/icons";
 import {BreakPoints} from "../utils/constants";
+import IconSet from "./IconSet";
 
 const {tablet} = BreakPoints;
 
@@ -55,7 +55,8 @@ const useStyles = makeStyles(theme => createStyles({
     },
     award: {
         color: "red",
-        marginLeft: 5
+        marginLeft: 10,
+        fontWeight: 600
     },
     author: {
         [theme.breakpoints.down(tablet)]: {
@@ -85,6 +86,15 @@ const useStyles = makeStyles(theme => createStyles({
         marginTop: 10,
         color: "#767676",
         fontStyle: "italic"
+    },
+    publicationType: {
+        marginRight: 5,
+        color: "#000",
+        fontWeight: 600,
+        fontSize: 10,
+        background: "#eebae1",
+        padding: "2px 6px",
+        borderRadius: 3
     },
     detail: {
         [theme.breakpoints.down(tablet)]: {
@@ -127,26 +137,45 @@ interface PublicationItemProps {
     award: string,
     author: string,
     me: number,
+    publicationType: string,
     journal: string,
     year: string,
     links: any
 }
 
-const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, author, me, journal, year, links}) => {
+const PublicationItem: React.FC<PublicationItemProps> = ({
+                                                             teaser,
+                                                             title,
+                                                             award,
+                                                             author,
+                                                             me,
+                                                             publicationType,
+                                                             journal,
+                                                             year,
+                                                             links
+                                                         }) => {
     const classes = useStyles();
-    const imgSrc = require("../assets/image/publication/" + teaser).default;
-    const {pdf, website, video, presentation, cite, code} = links;
+    const imgSrc = require("../assets/image/publication/" + teaser);
+    const {pdf} = links;
+
     const authorList = useMemo(() => {
         return author.split(",")
     }, [author])
 
+    const materials = useMemo(() => {
+        const {website, video, presentation, code} = links;
+        return [
+            {link: website, icon: <GlobalOutlined/>, name: "Website"},
+            {link: code, icon: <CodeSandboxOutlined/>, name: "Code"},
+            {link: video, icon: <VideoCameraOutlined/>, name: "Video"},
+            {link: presentation, icon: <FundProjectionScreenOutlined/>, name: "Presentation"},
+        ]
+    }, [links])
+
     return <div className={classes.PublicationItem}>
         <img className={classes.teaser} src={imgSrc} alt={""}/>
         <div className={classes.content}>
-            <div className={classes.title}>
-                <span>{title}</span>
-                {award !== "" && <span className={classes.award}>[{award}]</span>}
-            </div>
+            <div className={classes.title}>{title}</div>
 
             <div className={classes.author}>
                 {authorList.map((item, index) => {
@@ -157,7 +186,14 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                 })}
             </div>
 
-            <div className={classes.journal}>{journal}</div>
+            <div className={classes.journal}>
+                <span className={classes.publicationType}>{publicationType}</span>
+                <span>{journal}</span>
+                {award !== "" && <span className={classes.award}>
+                    <IconSet name={"firstAward"}/>
+                    {award}
+                </span>}
+            </div>
 
             <div className={classes.detail}>
                 [
@@ -170,17 +206,15 @@ const PublicationItem: React.FC<PublicationItemProps> = ({teaser, title, award, 
                 </div>
                 <div style={{margin: "0 5px"}}>|</div>
                 <div>
-                    Material:
-                    <a className={classes.link} href={video}
-                       target={"_blank"} rel="noreferrer"><VideoCameraOutlined/>Video</a>,
-                    <a className={classes.link} href={code}
-                       target={"_blank"} rel="noreferrer"><CodeSandboxOutlined/>Code</a>,
-                    <a className={classes.link} href={website}
-                       target={"_blank"} rel="noreferrer"><GlobalOutlined/>Website</a>,
-                    <a className={classes.link} href={presentation}
-                       target={"_blank"} rel="noreferrer"><FundProjectionScreenOutlined/>Presentation</a>
-                    <a className={classes.link} href={cite}
-                       target={"_blank"} rel="noreferrer"><LinkOutlined/>Cite</a>
+                    Materials:
+                    {materials.map((item) => {
+                        const {name, icon, link} = item;
+                        if (link !== "") {
+                            return <a className={classes.link} href={link}
+                                      target={"_blank"} rel="noreferrer">{icon}{name}</a>
+                        }
+                        return <span/>;
+                    })}
                 </div>
                 ]
             </div>

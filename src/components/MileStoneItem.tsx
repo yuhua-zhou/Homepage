@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => createStyles({
         },
         display: "flex",
         alignContent: "center",
-        fontFamily: "microsoft雅黑",
         fontSize: 15,
         paddingLeft: 20
     },

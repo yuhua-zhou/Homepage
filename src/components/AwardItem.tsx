@@ -43,7 +43,7 @@ const AwardItem: React.FC<AwardItemProps> = ({image, text, award}) => {
         <div className={classes.text}>{text}</div>
 
         <Image height={30} width={50}
-               src={require("../assets/image/award/" + image).default}/>
+               src={require("../assets/image/award/" + image)}/>
     </div>
 }
 

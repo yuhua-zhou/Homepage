@@ -2,10 +2,11 @@ import React, {useMemo, useState} from "react";
 import {createStyles, makeStyles} from "@material-ui/core";
 import Title from "../components/Title";
 import PublicationItem from "../components/PublicationItem";
-import publicationsList from "../assets/database/publications.json";
+
 import {getListKey} from "../utils/utils";
 
-import {Tabs} from "antd";
+import {Divider, Tabs} from "antd";
+import {useGlobalState} from "../store/useData";
 
 const {TabPane} = Tabs;
 
@@ -17,7 +18,8 @@ const useStyles = makeStyles(theme => createStyles({
 const PublicationView = () => {
     const classes = useStyles();
     const [selectedKey, setSelectedKey] = useState(0);
-    const categories = ["All", "Visualization", "HCI", "Computer Vision", "Nature Language Process"];
+    const categories = ["All", "System", "Visualization", "HCI", "Computer Vision", "Nature Language Process"];
+    const {publicationsList} = useGlobalState();
     const selectedPublications = useMemo(() => {
         return publicationsList.filter((item: any) => {
             return selectedKey === 0
@@ -45,6 +47,7 @@ const PublicationView = () => {
                     key={getListKey(item)} {...item}/>
             })}
         </div>
+        <Divider/>
     </div>
 }
 

@@ -5,7 +5,6 @@ import {CaretUpOutlined} from "@ant-design/icons";
 const useStyles = makeStyles(theme => createStyles({
     ExpandableLayout: {
         marginTop: 20,
-        fontFamily: "microsoft雅黑",
     },
     content: {
         transition: "all 1s",
@@ -28,15 +27,13 @@ const useStyles = makeStyles(theme => createStyles({
     }
 }));
 
-type IProps = {
+interface ExpandableLayoutProps {
     defaultExpand?: boolean,
-    style?: {
-        background: string
-    },
+    style?: any,
     rows: number
 }
 
-const ExpandableLayout: React.FC<IProps> = (props) => {
+const ExpandableLayout: React.FC<ExpandableLayoutProps> = (props) => {
     const {defaultExpand, children, style, rows} = props;
     const classes = useStyles();
     const [expand, setExpand] = useState(defaultExpand);
