@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.3fd4b6e7.css",
-    "main.js": "./static/js/main.8a00c3aa.js",
+    "main.js": "./static/js/main.b6999ffd.js",
     "static/media/moganshan.jpg": "./static/media/moganshan.6139f512787aebc41c5f.jpg",
     "static/media/qinghai.jpg": "./static/media/qinghai.f7b9122e55b8c2026a91.jpg",
     "static/media/sanya.jpg": "./static/media/sanya.73a03d87ed0d09cdc547.jpg",
@@ -38,6 +38,7 @@
     "static/media/national_Scholarship.jpg": "./static/media/national_Scholarship.9c0e73c441805a2d2f20.jpg",
     "static/media/shyz.png": "./static/media/shyz.effce2096b04aedc8419.png",
     "static/media/zstu.png": "./static/media/zstu.86a89256b736823777a7.png",
+    "static/media/ailab.jpg": "./static/media/ailab.205d3ffa1a7a09367570.jpg",
     "static/media/hangzhou.jpg": "./static/media/hangzhou.a37538c58207408a8667.jpg",
     "static/media/outstanding_graduate .jpg": "./static/media/outstanding_graduate .cdc6bec8d8023b1f15de.jpg",
     "static/media/alipay.png": "./static/media/alipay.84883f68232ec67bc69d.png",
@@ -51,10 +52,10 @@
     "static/media/secondAward.png": "./static/media/secondAward.9f4c40a17479f788a3b8.png",
     "index.html": "./index.html",
     "main.3fd4b6e7.css.map": "./static/css/main.3fd4b6e7.css.map",
-    "main.8a00c3aa.js.map": "./static/js/main.8a00c3aa.js.map"
+    "main.b6999ffd.js.map": "./static/js/main.b6999ffd.js.map"
   },
   "entrypoints": [
     "static/css/main.3fd4b6e7.css",
-    "static/js/main.8a00c3aa.js"
+    "static/js/main.b6999ffd.js"
   ]
 }
