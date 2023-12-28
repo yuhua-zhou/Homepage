@@ -4,7 +4,7 @@ const useStyles = makeStyles(theme => createStyles({
     Footer: {
         width: "100%",
         background: "#7daed3",
-        padding: "3px 0",
+        padding: "10px 0",
         textAlign: "center",
         color: "white",
         fontSize: 16,
@@ -15,7 +15,7 @@ const Footer = () => {
     const classes = useStyles();
 
     return <div className={classes.Footer}>
-        Copyright©2023. Last updated on Sep. 2023.
+        Copyright©2023. Last updated on Dec. 2023.
     </div>
 }
 

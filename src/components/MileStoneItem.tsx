@@ -1,9 +1,9 @@
 import React from "react";
-import {createStyles, makeStyles} from "@material-ui/core";
-import {BreakPoints} from "../utils/constants";
+import { createStyles, makeStyles } from "@material-ui/core";
+import { BreakPoints } from "../utils/constants";
 import IconSet from "./IconSet";
 
-const {tablet} = BreakPoints;
+const { tablet } = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     MileStoneItem: {
@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme => createStyles({
         display: "flex",
         alignContent: "center",
         fontSize: 15,
-        paddingLeft: 20
+        paddingLeft: 20,
+        color: "#000"
     },
     symbol: {
         [theme.breakpoints.down(tablet)]: {
@@ -57,17 +58,17 @@ interface MileStoneItemProps {
     icon: string
 }
 
-const MileStoneItem: React.FC<MileStoneItemProps> = ({date, issue, icon}) => {
+const MileStoneItem: React.FC<MileStoneItemProps> = ({ date, issue, icon }) => {
     const classes = useStyles();
     return <div className={classes.MileStoneItem}>
         <div className={classes.date}>{date}</div>
         <div className={classes.symbol}>
-            <div className={classes.line}/>
-            <div className={classes.circle}/>
-            <div className={classes.line}/>
+            <div className={classes.line} />
+            <div className={classes.circle} />
+            <div className={classes.line} />
         </div>
         <div className={classes.issue}>{issue}</div>
-        <IconSet name={icon}/>
+        <IconSet name={icon} />
     </div>
 }
 

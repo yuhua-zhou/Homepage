@@ -1,10 +1,11 @@
-import React from "react";
-import {createStyles, makeStyles} from "@material-ui/core";
-import {Image} from 'antd';
-import {BreakPoints} from "../utils/constants";
+import React, { useState } from "react";
+import { createStyles, makeStyles } from "@material-ui/core";
+import { Image } from 'antd';
+import { BreakPoints } from "../utils/constants";
 import IconSet from "./IconSet";
+import { EyeOutlined } from "@ant-design/icons";
 
-const {tablet} = BreakPoints;
+const { tablet } = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     AwardItem: {
@@ -18,12 +19,15 @@ const useStyles = makeStyles(theme => createStyles({
         margin: 5
     },
     text: {
-        margin: "0 10px",
+        margin: "3px 10px",
         textDecoration: "underline"
     },
-    icon: {
-        width: 20,
-        height: 20,
+    viewImage: {
+        cursor: "pointer",
+
+        "&:hover": {
+            opacity: .6
+        }
     }
 }));
 
@@ -33,17 +37,32 @@ interface AwardItemProps {
     award: string
 }
 
-const AwardItem: React.FC<AwardItemProps> = ({image, text, award}) => {
+const AwardItem: React.FC<AwardItemProps> = ({ image, text, award }) => {
     const classes = useStyles();
+    const [imageVisible, setImageVisible] = useState(false);
+    const imageSrc = require("../assets/image/award/" + image)
 
     return <div className={classes.AwardItem}>
 
-        <IconSet name={award}/>
+        <IconSet name={award} />
 
         <div className={classes.text}>{text}</div>
 
-        <Image height={30} width={50}
-               src={require("../assets/image/award/" + image)}/>
+        <EyeOutlined
+            className={classes.viewImage}
+            onClick={() => setImageVisible(true)} />
+
+        <Image height={0} width={0}
+            src={imageSrc}
+            style={{ display: 'none' }}
+            preview={{
+                visible: imageVisible,
+                src: imageSrc,
+                onVisibleChange: (value) => {
+                    setImageVisible(value);
+                },
+            }}
+        />
     </div>
 }
 

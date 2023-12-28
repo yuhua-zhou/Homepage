@@ -85,7 +85,7 @@ const ContactView = () => {
                     <div className={classes.verticalLine}/>
                     <div>
                         <div style={{fontWeight: 500, fontSize: 16}}>Find Me</div>
-                        <div>Hangzhou Zhejiang, China</div>
+                        <div>Zhejiang University, Hangzhou Zhejiang, China</div>
                     </div>
                 </div>
             </div>

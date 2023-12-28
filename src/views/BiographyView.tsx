@@ -1,16 +1,16 @@
 import React from "react";
-import {createStyles, makeStyles} from "@material-ui/core";
+import { createStyles, makeStyles } from "@material-ui/core";
 import Title from "../components/Title";
 import MyPicture from "../components/MyPicture";
-import {Divider, Tag} from 'antd';
+import { Divider, Tag } from 'antd';
 import {
     GithubOutlined,
     ZhihuOutlined,
     GoogleOutlined,
 } from '@ant-design/icons';
-import {BreakPoints} from "../utils/constants";
+import { BreakPoints } from "../utils/constants";
 
-const {laptop, tablet} = BreakPoints;
+const { laptop, tablet } = BreakPoints;
 
 const useStyles = makeStyles(theme => createStyles({
     BiographyView: {},
@@ -45,8 +45,22 @@ const useStyles = makeStyles(theme => createStyles({
     },
     tags: {
         marginBottom: 15,
+
         "& > *": {
-            cursor: 'pointer'
+            cursor: 'pointer',
+            marginRight: 6,
+            transition: "all 0.5s",
+            textAlign: "center",
+
+            [theme.breakpoints.up(tablet)]: {
+                width: 120
+            },
+        },
+
+        "& > *:hover": {
+            [theme.breakpoints.up(tablet)]: {
+                width: 150
+            },
         }
     },
     paragraph: {
@@ -70,14 +84,14 @@ const BiographyView = () => {
 
     // my media
     const medias = [
-        {name: "Github", icon: <GithubOutlined/>, color: "#474b56", link: "https://github.com/Zyh533"},
+        { name: "Github", icon: <GithubOutlined />, color: "#474b56", link: "https://github.com/yuhua-zhou" },
         {
             name: "Google Scholar",
-            icon: <GoogleOutlined/>,
+            icon: <GoogleOutlined />,
             color: "#ea4436",
             link: "https://scholar.google.com/citations?user=dzOBRToAAAAJ&hl=zh-CN"
         },
-        {name: "Zhihu", icon: <ZhihuOutlined/>, color: "#55acee", link: "https://www.zhihu.com/people/mo-ye-34-29"},
+        { name: "Zhihu", icon: <ZhihuOutlined />, color: "#55acee", link: "https://www.zhihu.com/people/mo-ye-34-29" },
     ];
 
     // click media go to the website
@@ -86,10 +100,10 @@ const BiographyView = () => {
     }
 
     return <div id={"Biography"} className={classes.BiographyView}>
-        <Title title={"Biography"} subTitle={"about me"}/>
+        <Title title={"Biography"} subTitle={"about me"} />
         <div className={classes.body}>
 
-            <MyPicture/>
+            <MyPicture />
 
             <div className={classes.content}>
                 <div className={classes.name}>
@@ -97,7 +111,7 @@ const BiographyView = () => {
                 </div>
                 <div className={classes.tags}>
                     {medias.map((item) => {
-                        const {name, color, icon, link} = item;
+                        const { name, color, icon, link } = item;
                         return <Tag icon={icon} color={color} onClick={() => onMediaClick(link)}>{name}</Tag>
                     })}
                 </div>
@@ -110,7 +124,7 @@ const BiographyView = () => {
                     </a>
                     of State key Lab of Cad & CG, College of Computer Technology, Zhejiang University, supervised by
                     <a className={classes.link} href={"https://person.zju.edu.cn/ycwu"} target={"_blank"}
-                       rel="noreferrer">
+                        rel="noreferrer">
                         Prof. Yingcai Wu.
                     </a>
                     I received my Bachelor's degree of Computer Science and Technology from Zhejiang
@@ -140,7 +154,7 @@ const BiographyView = () => {
             </div>
         </div>
 
-        <Divider/>
+        <Divider />
     </div>
 }
 

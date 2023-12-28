@@ -13,17 +13,20 @@ const useStyles = makeStyles(theme => createStyles({
     Container: {
         width: '100%',
         fontWeight: 700,
-        fontSize: 14,
+        //fontSize: 14,
+        fontSize: 15,
     },
     Navigation: {
         width: '100%',
-        height: '53px',
+        //height: '53px',
+        height: '58px',
         backgroundColor: "#bdd7e7",
         display: "flex",
         alignItems: "center",
     },
     logo: {
-        height: 35,
+        //height: 35,
+        height: 37,
         marginLeft: 25,
         marginRight: 30,
         cursor: "pointer"
@@ -70,7 +73,8 @@ const useStyles = makeStyles(theme => createStyles({
             padding: "0 15px",
             margin: "0 3px",
             cursor: "pointer",
-            lineHeight: "53px",
+            // lineHeight: "53px",
+            lineHeight: "58px",
             transition: "0.5s",
         },
 
@@ -95,11 +99,12 @@ const useStyles = makeStyles(theme => createStyles({
             margin: "0 3px",
             cursor: "pointer",
             backgroundColor: "#6baed6",
-            lineHeight: "53px",
+             // lineHeight: "53px",
+            lineHeight: "58px",
         },
     },
     blogBtn: {
-        height: '53px',
+        height: '58px',
         marginLeft: "auto",
         marginRight: 25,
         cursor: "pointer",
@@ -113,10 +118,12 @@ const useStyles = makeStyles(theme => createStyles({
         }
     },
     blogText: {
-        width: 60,
+        // width: 60,
+        width: 70,
         background: "#bdd7e7",
         position: "absolute",
-        lineHeight: "53px",
+        // lineHeight: "53px",
+        lineHeight: "58px",
         right: 0,
         transition: "0.4s",
     }
@@ -126,6 +133,7 @@ interface NavigationProps {
     navigations: string[],
 }
 
+// 加一个这个动效 https://254-online.com/shape-visual-element-graphic-design/
 const Navigation: React.FC<NavigationProps> = ({navigations}) => {
     const classes = useStyles();
     const currentNode = useRef(null);
@@ -143,7 +151,7 @@ const Navigation: React.FC<NavigationProps> = ({navigations}) => {
     // goto my blog
     const goToBlog = () => {
         // window.open("https://zyh533.github.io/SizerBlog/#/index/home")
-        window.open("https://github.com/Zyh533")
+        window.open("https://github.com/yuhua-zhou")
     }
 
     // logo弹窗，显示访问人数
@@ -188,6 +196,9 @@ const Navigation: React.FC<NavigationProps> = ({navigations}) => {
     // scroll change
     const onScrollChange = useCallback((event: any) => {
         const {scrollTop} = event.target;
+
+        console.log(scrollTop)
+
         const offsets: number[] = navigations.map((name) => {
             const element = document.getElementById(name);
             if (element) {
@@ -206,7 +217,7 @@ const Navigation: React.FC<NavigationProps> = ({navigations}) => {
 
     useEffect(() => {
         // get visit count
-        fetch("https://finicounter.vercel.app/counter?host=zyh533.github.io").then((res) => {
+        fetch("https://finicounter.vercel.app/counter?host=yuhua-zhou.github.io").then((res) => {
             if (res.status === 200) {
                 res.json().then(data => {
                     // @ts-ignore
